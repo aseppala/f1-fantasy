@@ -8,7 +8,7 @@ The user may provide:
 - **Race name** (e.g. "Australian GP", "Monaco") — if not provided, ask
 - **Budget remaining** — default $100M if first race or not specified
 - **Specific constraints** (e.g. "must include Verstappen", "no Aston Martin drivers")
-- **Chip to use** (e.g. "2x Boost on Leclerc") — default: save all chips
+- **Chip to use** (e.g. "3x Boost on Leclerc") — default: save all chips
 
 ## Steps
 
@@ -64,6 +64,18 @@ Selection approach:
 3. Fill remaining slots with highest-PPM value picks
 4. Ensure at least one budget pick ($5-7M) to enable premium selections
 5. Leave $1-3M buffer for future transfers
+
+### 4b. Run scoring simulation
+
+Run the simulator to validate picks:
+```bash
+python simulator.py --sims 1000
+```
+Review the output to check:
+- Do the highest-PPM drivers match your manual analysis?
+- How does your team compare to alternative builds?
+- What's the downside risk (look at Std Dev and Min)?
+If simulation disagrees with manual analysis, investigate why.
 
 ### 5. Present the team
 
