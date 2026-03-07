@@ -17,11 +17,11 @@ Ferrari goes 1-2 in Australia. You own BOTH drivers AND the constructor. 2x driv
 
 | # | Driver | Team | Price | Rationale |
 |---|--------|------|-------|-----------|
-| 1 | **Charles Leclerc** | Ferrari | $22.8M | **2x DRIVER.** Fastest in all testing (1:31.992). P1 FP1. P5 FP2. $4.9M cheaper than Verstappen. If he wins with 2x: 60-80 fantasy pts from ONE driver. |
-| 2 | **Lewis Hamilton** | Ferrari | $22.5M | P2 FP1, P4 FP2. 4th favorite in betting odds (7/1). Cheaper than Leclerc by $0.3M. "Determined to rebound" from 16.3 pts/race avg in 2025. |
-| 3 | **Oliver Bearman** | Haas | $7.4M | Proven value king. 57% owned. Overtaking machine. Needs 9 pts for price rise. |
-| 4 | **Arvid Lindblad** | Racing Bulls | ~$5.5M | P5 FP1, P8 FP2 as a rookie. Best PPM potential on grid at this price. |
-| 5 | **Valtteri Bottas** | Cadillac | $5.9M | Cheapest driver. Grid penalty has been lifted - no penalty for Australia. Pure budget enabler. |
+| 1 | **Charles Leclerc** | Ferrari | $22.8M | **2x DRIVER.** P1 FP1, P5 FP2, **P3 FP3** (+0.774s). Fastest in testing (1:31.992). $4.9M cheaper than Verstappen. If he wins with 2x: 60-80 fantasy pts from ONE driver. |
+| 2 | **Lewis Hamilton** | Ferrari | $22.5M | P2 FP1, P4 FP2, **P2 FP3** (+0.616s). Beat Leclerc in FP3! Cheaper by $0.3M. "Determined to rebound" from 16.3 pts/race avg in 2025. |
+| 3 | **Oliver Bearman** | Haas | $7.4M | **P10 FP3** confirms midfield pace. 57% owned. Overtaking machine. Needs 9 pts for price rise. |
+| 4 | **Arvid Lindblad** | Racing Bulls | ~$5.5M | P5 FP1, P8 FP2, **P11 FP3**. Slight regression but still best value rookie on the grid. |
+| 5 | **Valtteri Bottas** | Cadillac | $5.9M | P19 FP3. Cheapest driver. Grid penalty lifted. Pure budget enabler. |
 
 **Driver total: ~$64.1M**
 
@@ -29,8 +29,8 @@ Ferrari goes 1-2 in Australia. You own BOTH drivers AND the constructor. 2x driv
 
 | # | Constructor | Price | Rationale |
 |---|------------|-------|-----------|
-| 1 | **Ferrari** | ~$25.0M | TRIPLE FERRARI EXPOSURE. Both Leclerc + Hamilton score for this constructor. If Ferrari 1-2: constructor alone scores 55-65 pts. |
-| 2 | **Racing Bulls** | $6.3M | Lindblad synergy. Budget pick with upside if Lindblad's practice pace is real. |
+| 1 | **Ferrari** | ~$25.0M | TRIPLE FERRARI EXPOSURE. Hamilton **P2**, Leclerc **P3** in FP3. Both top 3 all weekend. If Ferrari 1-2: constructor alone scores 55-65 pts. |
+| 2 | **Racing Bulls** | $6.3M | Lindblad P11 FP3 + Lawson P12 FP3. Budget constructor with rookie upside. |
 
 **Constructor total: ~$31.3M**
 
@@ -85,11 +85,14 @@ Ferrari goes 1-2 in Australia. You own BOTH drivers AND the constructor. 2x driv
 
 **Deliberate choice.** This team is a CONCENTRATED BET on Ferrari. Diversification is for Team #1 (safe). Team #3 says:
 
-- Mercedes had best testing race pace → but this is Albert Park, not Bahrain
-- McLaren Piastri topped FP2 → but testing showed them "a little bit off"
-- Ferrari had fastest single laps AND both drivers consistently top 5 → strongest overall signal
+- Mercedes Russell was 0.6s fastest in FP3 → **this is the biggest risk.** If Russell dominates, we miss out entirely.
+- McLaren Piastri P4 FP3, topped FP2 → competitive but behind Ferrari on average
+- Ferrari had BOTH drivers in top 3 in FP3 → most consistent team across ALL sessions (FP1, FP2, FP3)
+- **Antonelli crashed in FP3** → if his car isn't ready, Mercedes constructor loses half its scoring. Ferrari dodges this chaos.
 
-If you wanted diversification, play Team #1. Team #3 is for when you believe the data.
+**FP3 reality check:** Russell's dominance makes "no Mercedes" riskier than before. But Ferrari's consistency (both drivers top 3 every session) is the counter-argument. You're betting on race pace over one-lap pace.
+
+If you wanted diversification, play Team #1. Team #3 is for when you believe Ferrari's consistency beats Mercedes' raw speed.
 
 ---
 
@@ -112,7 +115,7 @@ If you wanted diversification, play Team #1. Team #3 is for when you believe the
 ## Before Locking In
 
 1. [ ] Verify Ferrari constructor price on fantasy.formula1.com
-2. [ ] Confirm Bottas grid penalty is reflected (5 places)
-3. [ ] Confirm total within $100M
-4. [ ] Lock team before qualifying (Saturday March 7)
-5. [ ] Accept that this team could finish last OR first in your league this week
+2. [ ] Confirm total within $100M
+3. [ ] Lock team before qualifying (Saturday March 7)
+4. [ ] Accept that this team could finish last OR first in your league this week
+5. [ ] **FP3 warning:** Russell 0.6s clear — are you comfortable betting against Mercedes?
