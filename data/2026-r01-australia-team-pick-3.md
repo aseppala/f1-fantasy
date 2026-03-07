@@ -1,13 +1,13 @@
 # 2026 Australian GP - Fantasy Team Pick #3 ("Ferrari Nuclear")
 
 **Budget:** $100M | **Deadline:** Before qualifying, Saturday March 7
-**Strategy:** HIGH RISK, HIGH REWARD. Triple Ferrari + 2x Boost.
+**Strategy:** HIGH RISK, HIGH REWARD. Triple Ferrari + 2x driver.
 
 ---
 
 ## The Bet
 
-Ferrari goes 1-2 in Australia. You own BOTH drivers AND the constructor. 2x Boost on Leclerc. If it hits, you blow the doors off the friends league. If it doesn't, you crash and burn.
+Ferrari goes 1-2 in Australia. You own BOTH drivers AND the constructor. 2x driver on Leclerc. If it hits, you blow the doors off the friends league. If it doesn't, you crash and burn.
 
 ---
 
@@ -17,7 +17,7 @@ Ferrari goes 1-2 in Australia. You own BOTH drivers AND the constructor. 2x Boos
 
 | # | Driver | Team | Price | Rationale |
 |---|--------|------|-------|-----------|
-| 1 | **Charles Leclerc** | Ferrari | $22.8M | **2x BOOST.** Fastest in all testing (1:31.992). P1 FP1. P5 FP2. $4.9M cheaper than Verstappen. If he wins with boost: 60-80 fantasy pts from ONE driver. |
+| 1 | **Charles Leclerc** | Ferrari | $22.8M | **2x DRIVER.** Fastest in all testing (1:31.992). P1 FP1. P5 FP2. $4.9M cheaper than Verstappen. If he wins with 2x: 60-80 fantasy pts from ONE driver. |
 | 2 | **Lewis Hamilton** | Ferrari | $22.5M | P2 FP1, P4 FP2. 4th favorite in betting odds (7/1). Cheaper than Leclerc by $0.3M. "Determined to rebound" from 16.3 pts/race avg in 2025. |
 | 3 | **Oliver Bearman** | Haas | $7.4M | Proven value king. 57% owned. Overtaking machine. Needs 9 pts for price rise. |
 | 4 | **Arvid Lindblad** | Racing Bulls | ~$5.5M | P5 FP1, P8 FP2 as a rookie. Best PPM potential on grid at this price. |
@@ -36,7 +36,7 @@ Ferrari goes 1-2 in Australia. You own BOTH drivers AND the constructor. 2x Boos
 
 ### Team Total: ~$95.4M (buffer: ~$4.6M)
 
-### CHIP: 2x Boost on Charles Leclerc
+### 2x Driver: Charles Leclerc (standard captain pick, not a chip)
 
 ---
 
@@ -46,7 +46,7 @@ Ferrari goes 1-2 in Australia. You own BOTH drivers AND the constructor. 2x Boos
 
 | Pick | Calculation | Fantasy Pts |
 |------|-----------|-------------|
-| Leclerc (2x Boost) | (25 race + 5 quali + 3 overtakes + FL) x 2 | ~70-80 |
+| Leclerc (2x driver) | (25 race + 5 quali + 3 overtakes + FL) x 2 | ~70-80 |
 | Hamilton | 18 race + 5 quali + 3 overtakes | ~26-30 |
 | Ferrari (C) | Both drivers race + quali + pit stops | ~55-65 |
 | Bearman | Race finish + overtakes | ~10-14 |
@@ -59,7 +59,7 @@ Ferrari goes 1-2 in Australia. You own BOTH drivers AND the constructor. 2x Boos
 
 | Pick | Calculation | Fantasy Pts |
 |------|-----------|-------------|
-| Leclerc (2x Boost) | -20 x 2 | **-40** |
+| Leclerc (2x driver) | -20 x 2 | **-40** |
 | Hamilton | DNF: -20 | **-20** |
 | Ferrari (C) | Both drivers out | ~-10 |
 | Others | Normal scoring | ~15-25 |
@@ -99,7 +99,7 @@ If you wanted diversification, play Team #1. Team #3 is for when you believe the
 |-|---------------|-------------------|----------------|
 | Premium drivers | Leclerc + Antonelli | Hadjar (mid) | Leclerc + Hamilton |
 | Constructors | Ferrari + Haas | McLaren + Ferrari | Ferrari + Racing Bulls |
-| Chip | Save all | Save all | **2x Boost Leclerc** |
+| Chip | Save all | Save all | Save all |
 | Ferrari picks | 2 (driver + C) | 1 (C only) | **3 (2 drivers + C)** |
 | Mercedes picks | 1 (Antonelli) | 0 | **0** |
 | McLaren picks | 0 | 1 (C) | **0** |

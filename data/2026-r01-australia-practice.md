@@ -81,3 +81,52 @@
 - FP2: Top 6 (Piastri through Verstappen) covered by ~0.5s
 - Lindblad within 1s of top in FP1, top 8 in FP2 = exceptional for a rookie on a budget team
 - Clear 3-team fight at the front: Ferrari, McLaren, Mercedes
+
+---
+
+## FP3 Classification (Saturday, March 7)
+
+| Pos | Driver | Team | Time | Gap |
+|-----|--------|------|------|-----|
+| 1 | George Russell | Mercedes | 1:19.053 | - |
+| 2 | Lewis Hamilton | Ferrari | - | +0.616 |
+| 3 | Charles Leclerc | Ferrari | - | +0.774 |
+| 4 | Oscar Piastri | McLaren | - | +1.034 |
+| 5 | Isack Hadjar | Red Bull | - | +1.084 |
+| 6 | Max Verstappen | Red Bull | - | +1.144 |
+| 7 | Kimi Antonelli | Mercedes | - | +1.271 |
+| 8 | Lando Norris | McLaren | - | +1.390 |
+| 9 | Gabriel Bortoleto | Audi | - | +1.406 |
+| 10 | Oliver Bearman | Haas | - | +1.725 |
+| 11 | Arvid Lindblad | Racing Bulls | - | - |
+| 12 | Liam Lawson | Racing Bulls | - | - |
+| 13 | Esteban Ocon | Haas | - | - |
+| 14 | Nico Hulkenberg | Audi | - | - |
+| 15 | Pierre Gasly | Alpine | - | - |
+| 16 | Franco Colapinto | Alpine | - | - |
+| 17 | Alexander Albon | Williams | - | - |
+| 18 | Fernando Alonso | Aston Martin | - | - |
+| 19 | Valtteri Bottas | Cadillac | - | - |
+| 20 | Sergio Perez | Cadillac | - | - |
+| 21 | Carlos Sainz | Williams | No time | Stopped at pit entry |
+| DNS | Lance Stroll | Aston Martin | DNS | ICE issue, did not participate |
+
+**FP3 Notes:**
+- **Russell dominant:** 0.6s clear of P2 Hamilton — massive gap. Mercedes looks extremely strong for qualifying.
+- **Antonelli heavy crash at Turn 2:** 17G impact after clipping kerb, lost rear of W17. Massive damage to all four corners. Red flag. Car repair in doubt before qualifying — Mercedes mechanics face a "monumental job."
+- **Sainz stopped at pit entry:** Williams reliability concern. Red flag/VSC for recovery.
+- **Stroll DNS:** Aston Martin confirmed suspected ICE issue, did not participate.
+- **Session started late:** Delayed ~20 mins due to barrier repairs from earlier F3 Sprint crash.
+
+### FP3 Key Takeaways
+- **Mercedes is the car to beat** — Russell's 0.6s gap is enormous. If Antonelli's car gets fixed, both Mercs are Q3 certainties.
+- **Antonelli qualifying in doubt** — if he starts from pit lane or P22, his race points depend entirely on overtaking from the back. Major fantasy risk.
+- **Ferrari solid but not fastest** — Hamilton P2 and Leclerc P3, but 0.6-0.8s off Russell.
+- **Hadjar impressive again** — P5, ahead of Verstappen. Red Bull B-driver outperforming the A-driver?
+- **Bearman P10** — confirms Haas midfield competitiveness. Good fantasy value.
+- **Lindblad P11** — dropped from FP1/FP2 highs but still best-placed rookie/budget driver.
+
+### Weekend Weather Forecast
+- **Qualifying (Sat March 7):** Dry, warm, sunny. ~24C. Light wind.
+- **Race (Sun March 8):** Dry, warm, sunny. 14-26C. 95%+ chance of NO rain. Wind 15-25 km/h from south. Clear conditions.
+- **Impact:** Standard dry conditions. Rely on practice/testing pace data. No weather advantage for wet-weather specialists.

@@ -17,11 +17,11 @@ Why pay $52.7M for Piastri + Norris as drivers when McLaren constructor ($28.9M)
 
 | # | Driver | Team | Price | Rationale |
 |---|--------|------|-------|-----------|
-| 1 | **Isack Hadjar** | Red Bull | $15.1M | P4 FP1, P9 FP2. In the 4th-fastest car. Very low ownership = huge differential. Wildcard pick. |
-| 2 | **Oliver Bearman** | Haas | $7.4M | Proven value king. 57% owned. Overtaking machine. Needs only 9 pts for max price gain. |
-| 3 | **Esteban Ocon** | Haas | $7.3M | Double Haas stack! P10 FP2. Needs only 7 pts for price rise. Two overtaking midfielders. |
-| 4 | **Arvid Lindblad** | Racing Bulls | ~$5.5M | P5 FP1, P8 FP2 as a rookie. Best PPM potential on the grid. |
-| 5 | **Valtteri Bottas** | Cadillac | $5.9M | Cheapest driver. Grid penalty lifted - no penalty for Australia. Could swap to Lawson ($6.5M) for RB synergy. |
+| 1 | **Isack Hadjar** | Red Bull | $15.1M | P4 FP1, P9 FP2, **P5 FP3** (ahead of Verstappen!). Consistent top-half finishes. Very low ownership = huge differential. |
+| 2 | **Oliver Bearman** | Haas | $7.4M | Proven value king. 57% owned. **P10 FP3** confirms midfield pace. Needs only 9 pts for max price gain. |
+| 3 | **Esteban Ocon** | Haas | $7.3M | Double Haas stack! P10 FP2, P13 FP3. Needs only 7 pts for price rise. Two overtaking midfielders. |
+| 4 | **Arvid Lindblad** | Racing Bulls | ~$5.5M | P5 FP1, P8 FP2, **P11 FP3**. Slight drop but still best-placed rookie/budget driver across all sessions. |
+| 5 | **Valtteri Bottas** | Cadillac | $5.9M | Cheapest driver. Grid penalty lifted. P19 FP3. Pure budget enabler. |
 
 **Driver total: ~$41.2M**
 
@@ -29,8 +29,8 @@ Why pay $52.7M for Piastri + Norris as drivers when McLaren constructor ($28.9M)
 
 | # | Constructor | Price | Rationale |
 |---|------------|-------|-----------|
-| 1 | **McLaren** | $28.9M | Gets you BOTH Piastri (FP2 P1, home GP) + Norris ($27.2M driver). Norris scored 59 fantasy pts at AUS in 2025. Pit stops + qualifying from both. |
-| 2 | **Ferrari** | ~$25.0M | Gets you BOTH Leclerc (FP1 P1, fastest in testing) + Hamilton. Both consistently top 5. Elite constructor scoring. |
+| 1 | **McLaren** | $28.9M | Piastri **P4 FP3** (P1 FP2, home GP) + Norris (P8 FP3). Norris scored 59 fantasy pts at AUS in 2025. Pit stops + qualifying from both. |
+| 2 | **Ferrari** | ~$25.0M | Hamilton **P2 FP3**, Leclerc **P3 FP3**. Both consistently top 3 all weekend. Elite constructor scoring. |
 
 **Constructor total: ~$53.9M**
 
@@ -57,15 +57,18 @@ Why pay $52.7M for Piastri + Norris as drivers when McLaren constructor ($28.9M)
 
 ---
 
+## 2x Driver Pick
+
+**Hadjar** as 2x driver (captain). This is a standard pick every race, not a chip.
+- Highest-ceiling individual driver on this team
+- **FP3 update: P5, ahead of Verstappen** — confidence upgraded
+- If Red Bull's race pace clicks, Hadjar scoring 15-20 pts = 30-40 doubled
+- FP3 data confirms he's the right captain choice for this team
+
 ## Chip Strategy
 
-**Option A (Aggressive):** 2x Boost on Hadjar
-- Highest-ceiling individual driver on this team
-- If Red Bull's race pace clicks, boosted Hadjar scoring 15-20 pts = 30-40 pts
-- High risk, high reward - fits the "creative" spirit
-
-**Option B (Conservative):** Save all chips
-- Same reasoning as Team #1: Round 1 uncertainty with new regs
+**Save all chips for Round 1.**
+- Round 1 uncertainty with new regs
 - Use chips when form is established (Rounds 3-5)
 
 ---
@@ -94,13 +97,13 @@ Why pay $52.7M for Piastri + Norris as drivers when McLaren constructor ($28.9M)
 
 | Pick | Confidence | Upside | Risk |
 |------|-----------|--------|------|
-| McLaren (C) | High | Both drivers fast, Piastri home GP | Norris gearbox concern from FP1 |
-| Ferrari (C) | High | Both drivers top 5 everywhere | New PU reliability unknown |
-| Hadjar | Medium | Red Bull car, P4 FP1, low ownership | Red Bull degradation issues, $15.1M is pricey |
-| Bearman | High | Proven value, overtaking machine | Haas midfield volatile |
-| Ocon | Medium-High | Only 7 pts for price rise, P10 FP2 | Lower ceiling than Bearman |
-| Lindblad | Medium | Sensational practice pace at rookie price | Sample size = 2 sessions |
-| Bottas | Low | Just a budget filler | Cadillac struggling badly |
+| McLaren (C) | High | Both drivers fast, Piastri P4 FP3, home GP | Norris P8 FP3 slightly off Piastri's pace |
+| Ferrari (C) | High | Hamilton P2, Leclerc P3 in FP3. Top 3 all weekend | New PU reliability unknown |
+| Hadjar | Medium-High | P5 FP3 ahead of Verstappen! Red Bull car, low ownership | Red Bull degradation issues, $15.1M is pricey |
+| Bearman | High | P10 FP3 confirms pace. Overtaking machine | Haas midfield volatile |
+| Ocon | Medium | P13 FP3, dropped from P10 FP2 | Lower ceiling than Bearman, inconsistent across sessions |
+| Lindblad | Medium | P11 FP3, still best rookie. Great for price | Slight regression from FP1/FP2 highs |
+| Bottas | Low | Just a budget filler | Cadillac P19/P20 all weekend |
 
 ---
 

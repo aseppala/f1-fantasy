@@ -11,7 +11,7 @@
 
 | # | Driver | Team | Price | Rationale |
 |---|--------|------|-------|-----------|
-| 1 | **Charles Leclerc** | Ferrari | $22.8M | Fastest in testing (1:31.992). P1 FP1, P5 FP2. Ferrari has elite race pace (2nd in race sims). Top 2x Boost candidate. |
+| 1 | **Charles Leclerc** | Ferrari | $22.8M | **2x DRIVER.** Fastest in testing (1:31.992). P1 FP1, P5 FP2. Ferrari has elite race pace (2nd in race sims). |
 | 2 | **Kimi Antonelli** | Mercedes | $23.2M | Mercedes = BEST race sim pace in testing (Russell 1:36.5 avg). P2 in FP2. $4.2M cheaper than Russell. Great differential pick. |
 | 3 | **Oliver Bearman** | Haas | $7.4M | 57% owned = highest in game. Haas "well-balanced" in testing. Ocon P10 FP2. Overtaking machine. Only needs 9 pts for max price gain. |
 | 4 | **Arvid Lindblad** | Racing Bulls | ~$5-6M | P5 FP1, P8 FP2 as a ROOKIE. At this price, even occasional points = amazing PPM. Today's biggest revelation. |
@@ -90,6 +90,13 @@
 
 ---
 
+## 2x Driver Pick
+
+**Leclerc** as 2x driver (captain). This is a standard pick every race, not a chip.
+- Ferrari pace confirmed across testing + both practice sessions
+- Leclerc has highest ceiling at his price point
+- Fastest in testing (1:31.992), P1 FP1
+
 ## Power Chip Strategy
 
 **Round 1: SAVE ALL CHIPS**
@@ -99,10 +106,6 @@ Reasoning:
 - First race with new cars, tires, energy rules
 - Unknown reliability across the field
 - Better to deploy chips Rounds 3-5 when pecking order is established
-
-**If you must use one:** 2x Boost on Leclerc
-- Ferrari pace confirmed across testing + both practice sessions
-- Leclerc has highest ceiling at his price point
 
 ---
 
