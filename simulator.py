@@ -390,6 +390,113 @@ def get_default_teams() -> dict:
     }
 
 
+# --- China GP profiles (Round 2) ---
+
+def get_china_profiles() -> tuple[list[DriverProfile], list[ConstructorProfile]]:
+    """Profiles for Chinese GP based on R01 results + FP1 + Sprint Qualifying."""
+    drivers = [
+        # S Tier: Mercedes dominant (1-2 in R01, 1-2 FP1, 1-2 SQ)
+        DriverProfile("Russell", "Mercedes", 27.7, quali_mean=1.5, race_mean=1.5, variance=1.5, dnf_chance=0.04, overtake_factor=1.0),
+        DriverProfile("Antonelli", "Mercedes", 23.5, quali_mean=2.5, race_mean=2.5, variance=2.0, dnf_chance=0.06, overtake_factor=1.0),
+
+        # A Tier: McLaren + Ferrari fighting for P3-P6
+        DriverProfile("Norris", "McLaren", 27.2, quali_mean=3.5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.0),
+        DriverProfile("Hamilton", "Ferrari", 22.6, quali_mean=4.5, race_mean=4.5, variance=2.5, dnf_chance=0.05, overtake_factor=1.1),
+        DriverProfile("Piastri", "McLaren", 25.2, quali_mean=5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.1),
+        DriverProfile("Leclerc", "Ferrari", 23.1, quali_mean=5.5, race_mean=5, variance=2.5, dnf_chance=0.05, overtake_factor=1.0),
+
+        # B Tier: Gasly surprise P7 in SQ, Verstappen P8
+        DriverProfile("Gasly", "Alpine", 12.2, quali_mean=8, race_mean=9, variance=3.5, dnf_chance=0.07, overtake_factor=1.0),
+        DriverProfile("Verstappen", "Red Bull", 28.0, quali_mean=7, race_mean=7, variance=3.0, dnf_chance=0.05, overtake_factor=1.3),
+
+        # C Tier: midfield (SQ P9-P16)
+        DriverProfile("Bearman", "Haas", 8.0, quali_mean=10, race_mean=9, variance=3.0, dnf_chance=0.07, overtake_factor=1.3),
+        DriverProfile("Hadjar", "Red Bull", 14.5, quali_mean=10, race_mean=10, variance=3.5, dnf_chance=0.08, overtake_factor=1.0),
+        DriverProfile("Hulkenberg", "Audi", 8.0, quali_mean=11, race_mean=12, variance=3.5, dnf_chance=0.07, overtake_factor=0.9),
+        DriverProfile("Ocon", "Haas", 7.3, quali_mean=12, race_mean=11, variance=3.5, dnf_chance=0.07, overtake_factor=1.1),
+        DriverProfile("Lawson", "Racing Bulls", 6.5, quali_mean=13, race_mean=13, variance=3.5, dnf_chance=0.07, overtake_factor=1.0),
+        DriverProfile("Bortoleto", "Audi", 7.0, quali_mean=14, race_mean=14, variance=3.5, dnf_chance=0.07, overtake_factor=0.9),
+        DriverProfile("Lindblad", "Racing Bulls", 6.1, quali_mean=15, race_mean=15, variance=3.5, dnf_chance=0.08, overtake_factor=1.0),
+        DriverProfile("Colapinto", "Alpine", 6.4, quali_mean=16, race_mean=16, variance=3.5, dnf_chance=0.07, overtake_factor=0.9),
+
+        # D Tier: backmarkers (SQ P17+)
+        DriverProfile("Sainz", "Williams", 12.0, quali_mean=17, race_mean=16, variance=3.5, dnf_chance=0.08, overtake_factor=1.0),
+        DriverProfile("Albon", "Williams", 10.0, quali_mean=18, race_mean=17, variance=3.5, dnf_chance=0.07, overtake_factor=1.0),
+        DriverProfile("Alonso", "Aston Martin", 10.0, quali_mean=19, race_mean=18, variance=3.0, dnf_chance=0.12, overtake_factor=1.0),
+        DriverProfile("Stroll", "Aston Martin", 8.0, quali_mean=20, race_mean=20, variance=3.0, dnf_chance=0.12, overtake_factor=0.8),
+        DriverProfile("Bottas", "Cadillac", 5.3, quali_mean=21, race_mean=21, variance=3.0, dnf_chance=0.10, overtake_factor=0.8),
+        DriverProfile("Perez", "Cadillac", 6.0, quali_mean=22, race_mean=22, variance=3.0, dnf_chance=0.10, overtake_factor=0.8),
+    ]
+
+    constructors = [
+        ConstructorProfile("Mercedes", 27.8, pit_mean=2.3),
+        ConstructorProfile("McLaren", 28.8, pit_mean=2.3),
+        ConstructorProfile("Ferrari", 23.6, pit_mean=2.3),
+        ConstructorProfile("Red Bull", 25.5, pit_mean=2.2),
+        ConstructorProfile("Haas", 8.0, pit_mean=2.5),
+        ConstructorProfile("Audi", 7.0, pit_mean=2.6),
+        ConstructorProfile("Alpine", 8.0, pit_mean=2.5),
+        ConstructorProfile("Racing Bulls", 6.9, pit_mean=2.4),
+        ConstructorProfile("Williams", 12.0, pit_mean=2.5),
+        ConstructorProfile("Aston Martin", 9.4, pit_mean=2.6),
+        ConstructorProfile("Cadillac", 4.9, pit_mean=2.8),
+    ]
+
+    con_map = {c.name: c for c in constructors}
+    for d in drivers:
+        con_map[d.team].drivers.append(d.name)
+
+    return drivers, constructors
+
+
+def get_china_teams() -> dict:
+    return {
+        # --- Team 1 variants ---
+        "T1 Safe (Limitless)": {
+            "drivers": ["Russell", "Antonelli", "Norris", "Piastri", "Leclerc"],
+            "constructors": ["Mercedes", "McLaren"],
+            "captain": "Russell",
+        },
+        "T1 Alt: Hamilton over Leclerc": {
+            "drivers": ["Russell", "Antonelli", "Norris", "Piastri", "Hamilton"],
+            "constructors": ["Mercedes", "McLaren"],
+            "captain": "Russell",
+        },
+        # --- Team 2 variants ---
+        "T2 Constructor Kings (Hadjar 2x)": {
+            "drivers": ["Hadjar", "Bearman", "Bortoleto", "Lindblad", "Ocon"],
+            "constructors": ["Mercedes", "McLaren"],
+            "captain": "Hadjar",
+        },
+        "T2 Alt: Bearman 2x": {
+            "drivers": ["Hadjar", "Bearman", "Bortoleto", "Lindblad", "Ocon"],
+            "constructors": ["Mercedes", "McLaren"],
+            "captain": "Bearman",
+        },
+        "T2 Alt: Gasly over Hadjar": {
+            "drivers": ["Bearman", "Gasly", "Ocon", "Lindblad", "Hulkenberg"],
+            "constructors": ["Mercedes", "McLaren"],
+            "captain": "Bearman",
+        },
+        "T2 Alt: Keep Hadjar + Ferrari C": {
+            "drivers": ["Hadjar", "Bearman", "Ocon", "Lindblad", "Hulkenberg"],
+            "constructors": ["Mercedes", "Ferrari"],
+            "captain": "Bearman",
+        },
+        # --- Team 3 variants ---
+        "T3 Ferrari Nuclear (Leclerc 2x)": {
+            "drivers": ["Leclerc", "Hamilton", "Bearman", "Lindblad", "Bottas"],
+            "constructors": ["Ferrari", "Racing Bulls"],
+            "captain": "Leclerc",
+        },
+        "T3 Alt: Hamilton 2x": {
+            "drivers": ["Leclerc", "Hamilton", "Bearman", "Lindblad", "Bottas"],
+            "constructors": ["Ferrari", "Racing Bulls"],
+            "captain": "Hamilton",
+        },
+    }
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="F1 Fantasy Monte Carlo Simulator")
     parser.add_argument("--sims", type=int, default=1000, help="Number of simulations (default: 1000)")
@@ -399,6 +506,8 @@ def parse_args():
     parser.add_argument("--constructors", type=str, help="Comma-separated constructor names for custom team")
     parser.add_argument("--captain", type=str, help="Captain (2x) driver for custom team")
     parser.add_argument("--seed", type=int, help="Random seed for reproducibility")
+    parser.add_argument("--race", type=str, default="australia", choices=["australia", "china"],
+                        help="Race weekend profiles to use (default: australia)")
     return parser.parse_args()
 
 
@@ -408,8 +517,12 @@ def main():
     if args.seed is not None:
         random.seed(args.seed)
 
-    drivers, constructors = get_australia_profiles()
-    teams = get_default_teams()
+    if args.race == "china":
+        drivers, constructors = get_china_profiles()
+        teams = get_china_teams()
+    else:
+        drivers, constructors = get_australia_profiles()
+        teams = get_default_teams()
 
     # Add custom team if specified
     if args.team:

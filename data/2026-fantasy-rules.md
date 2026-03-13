@@ -89,7 +89,7 @@ Only one chip per race weekend. Each can only be used once per season. 3 availab
 |------|-------------|-----------|
 | **Limitless** | Unlimited transfers AND ignore the budget cap for one race week. Team returns to normal the following week. | From Round 2 |
 | **Wildcard** | Unlimited transfers but must stay within your budget cap. | From Round 2 |
-| **Final Fix** | Substitute one driver after lineups lock, before the Grand Prix. If the swapped driver had 2x boost, it transfers to the new driver. | From start |
+| **Final Fix** | Substitute one driver after lineups lock, before the Grand Prix. If the swapped driver had 2x boost, it transfers to the new driver. On sprint weekends, unlocks only after the Sprint. | From start |
 | **Auto Pilot** | Automatically gives 2x boost to whichever driver in your team scores the most points that weekend. | From start |
 | **No Negative** | Any negative points (DNFs, positions lost) are set to zero for that race week. Great for street circuits and wet races. | From start |
 | **x3 Boost** | One driver scores TRIPLE points. You can still assign 2x to a different driver, so two drivers get boosted (one x3, one x2). Cannot stack x3 and x2 on the same driver. | From Round 2 |
