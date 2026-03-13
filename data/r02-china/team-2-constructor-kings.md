@@ -63,6 +63,7 @@ At $12.2M, Gasly is still better than Hadjar (+1.7 avg pts, $2.3M cheaper), and 
 | 3 | **Esteban Ocon** | Haas | $7.9M | 7.6 | 0.96 | Haas double-stack. SQ P12. Needs only 7 pts for price rise. |
 | 4 | **Arvid Lindblad** | Racing Bulls | $6.8M | 3.7 | 0.54 | Budget filler. R01 P8 scored 15 pts. SQ P15 — weaker weekend. |
 | 5 | **Nico Hulkenberg** | Audi | $6.2M | 4.8 | 0.77 | SQ P11. Solid midfield value at $6.2M after price drop. |
+| | **Drivers total** | | **$41.1M** | | | |
 
 ### Constructors
 
@@ -70,8 +71,9 @@ At $12.2M, Gasly is still better than Hadjar (+1.7 avg pts, $2.3M cheaper), and 
 |---|------------|-------|----------|-----|-----------|
 | 1 | **Mercedes** | $29.6M | 48.5 | 1.64 | Russell + Antonelli 1-2 all weekend. Dominant. |
 | 2 | **Ferrari** | $23.6M | 34.7 | 1.47 | Keeping from R01. Hamilton SQ P4 + Leclerc SQ P6. Solid 3rd-best. |
+| | **Constructors total** | **$53.2M** | | | |
 
-**Total: $94.3M** ($5.7M buffer) | 1 transfer saved for R03
+**Team total: $94.3M** ($5.7M buffer) | 1 transfer saved for R03
 
 ### 2x Driver: Oliver Bearman
 

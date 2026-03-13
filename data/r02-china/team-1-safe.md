@@ -29,19 +29,21 @@ The Limitless chip removes budget + transfer limits for one weekend. Sprint week
 | # | Driver | Team | Price | Exp. Pts | PPM | Rationale |
 |---|--------|------|-------|----------|-----|-----------|
 | 1 | **George Russell** (2x) | Mercedes | $27.7M | 30.4 (x2=60.8) | 1.10 | Won R01 by 3s. FP1 P1. SQ P1 by 0.29s. Untouchable this weekend. |
-| 2 | **Kimi Antonelli** | Mercedes | $23.8M | 26.5 | 1.11 | FP1 P2, SQ P2. Highest PPM of any premium driver. R01 P2. Mercedes lock. |
-| 3 | **Lando Norris** | McLaren | $27.2M | 22.2 | 0.81 | FP1 P3, SQ P3. McLaren clearly 2nd-fastest team. |
+| 2 | **Kimi Antonelli** | Mercedes | $23.5M | 26.5 | 1.13 | FP1 P2, SQ P2. Highest PPM of any premium driver. R01 P2. Mercedes lock. |
+| 3 | **Lando Norris** | McLaren | $27.1M | 22.2 | 0.82 | FP1 P3, SQ P3. McLaren clearly 2nd-fastest team. |
 | 4 | **Oscar Piastri** | McLaren | $25.2M | 22.4 | 0.89 | FP1 P4, SQ P5. Races stronger than he qualifies. Completes McLaren stack. |
-| 5 | **Lewis Hamilton** | Ferrari | $22.5M | 20.6 | 0.92 | **CHANGED from Leclerc.** SQ P4 — beat Leclerc (P6) by 0.37s. Better PPM (0.92 vs 0.82) AND $0.6M cheaper. |
+| 5 | **Lewis Hamilton** | Ferrari | $22.6M | 20.6 | 0.91 | **CHANGED from Leclerc.** SQ P4 — beat Leclerc (P6) by 0.37s. Better PPM AND $0.5M cheaper. |
+| | **Drivers total** | | **$126.1M** | | | |
 
 ### Constructors
 
 | # | Constructor | Price | Exp. Pts | PPM | Rationale |
 |---|------------|-------|----------|-----|-----------|
-| 1 | **Mercedes** | $27.8M | 48.5 | 1.74 | Both drivers 1-2 all weekend. 96 fantasy pts in R01. |
+| 1 | **Mercedes** | $29.6M | 48.5 | 1.64 | Both drivers 1-2 all weekend. 96 fantasy pts in R01. |
 | 2 | **McLaren** | $28.8M | 38.2 | 1.33 | Both drivers P3-P5 in SQ. Clear 2nd-best constructor. |
+| | **Constructors total** | **$58.4M** | | | |
 
-**Total: $182.2M** (Limitless ignores budget) | **Sim avg: 239.1 pts** | Std Dev: ±39.0
+**Team total: $184.5M** (Limitless ignores budget) | **Sim avg: 239.1 pts** | Std Dev: ±39.0
 
 ### 2x Driver: George Russell
 

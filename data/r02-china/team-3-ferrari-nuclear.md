@@ -22,11 +22,12 @@ Saving all chips. Limitless is the anti-chip for this team — it removes the Fe
 
 | # | Driver | Team | Price | Exp. Pts | PPM | Rationale |
 |---|--------|------|-------|----------|-----|-----------|
-| 1 | **Lewis Hamilton** (2x) | Ferrari | $22.5M | 20.6 (x2=41.2) | 0.92 | **Now captain.** SQ P4 — beat Leclerc by 0.37s. Faster Ferrari this weekend. |
+| 1 | **Lewis Hamilton** (2x) | Ferrari | $22.6M | 20.6 (x2=41.2) | 0.91 | **Now captain.** SQ P4 — beat Leclerc by 0.37s. Faster Ferrari this weekend. |
 | 2 | **Charles Leclerc** | Ferrari | $23.1M | 19.0 | 0.82 | SQ P6. Struggled on final SQ3 lap. Still essential for triple Ferrari exposure. |
 | 3 | **Oliver Bearman** | Haas | $8.0M | 9.9 | 1.23 | Best budget PPM. FP1 P7, SQ P9 (made SQ3!). |
-| 4 | **Arvid Lindblad** | Racing Bulls | $6.1M | 3.7 | 0.60 | Budget filler. R01 P8 scored 15 pts. SQ P15 — weaker weekend. |
+| 4 | **Arvid Lindblad** | Racing Bulls | $6.8M | 3.7 | 0.54 | Budget filler. R01 P8 scored 15 pts. SQ P15 — weaker weekend. |
 | 5 | **Valtteri Bottas** | Cadillac | $5.3M | 1.3 | 0.25 | Cheapest driver. Enables the double-Ferrari premium. SQ P21. |
+| | **Drivers total** | | **$65.8M** | | | |
 
 ### Constructors
 
@@ -34,8 +35,9 @@ Saving all chips. Limitless is the anti-chip for this team — it removes the Fe
 |---|------------|-------|----------|-----|-----------|
 | 1 | **Ferrari** | $23.6M | 34.7 | 1.47 | Triple Ferrari exposure. Hamilton SQ P4, Leclerc SQ P6. |
 | 2 | **Racing Bulls** | $6.9M | 6.0 | 0.87 | Budget constructor. Lindblad synergy. |
+| | **Constructors total** | **$30.5M** | | | |
 
-**Total: $95.5M** ($4.5M buffer) | **Sim avg: 115.7 pts** | Std Dev: ±42.1 (HIGHEST variance)
+**Team total: $96.3M** ($3.7M buffer) | **Sim avg: 115.7 pts** | Std Dev: ±42.1 (HIGHEST variance)
 
 ### 2x Driver: Lewis Hamilton
 
