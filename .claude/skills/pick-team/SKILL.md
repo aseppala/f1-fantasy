@@ -1,3 +1,9 @@
+---
+name: pick-team
+description: F1 Fantasy Team Picker
+user_invocable: true
+---
+
 # F1 Fantasy Team Picker
 
 Pick an optimal F1 Fantasy team for an upcoming race weekend.
@@ -14,21 +20,31 @@ The user may provide:
 
 ### 1. Load existing data
 
-Read all files in `data/` to understand:
+Read files in `data/` to understand:
 - Current driver lineups and prices (`data/2026-driver-lineups.md`)
 - Fantasy rules and scoring (`data/2026-fantasy-rules.md`)
-- Previous team picks (any `data/2026-r*-team-pick.md` files)
-- Any practice/qualifying results for the upcoming race
+- Preseason testing data (`data/2026-preseason-testing.md`)
+- Previous round folders (`data/r{XX}-{race-name}/`) for team picks, practice, and results
+- Any practice/qualifying results for the upcoming race in its round folder
 
 ### 2. Research current form
 
-Use web search to find:
+**IMPORTANT: Only use formula1.com for race results, practice, qualifying, and standings data. Do not use any other motorsport or news sites for results.**
+
+Fetch results directly from the official F1 website:
+- Practice results: `https://www.formula1.com/en/results/2026/races/{race-id}/{race-name}/practice/{session-number}`
+- Qualifying results: `https://www.formula1.com/en/results/2026/races/{race-id}/{race-name}/qualifying`
+- Race results: `https://www.formula1.com/en/results/2026/races/{race-id}/{race-name}/race-result`
+- Driver standings: `https://www.formula1.com/en/results/2026/drivers`
+- Use the results index page to find correct race IDs: `https://www.formula1.com/en/results/2026/races`
+
+Look for:
 - Latest practice session results (FP1, FP2, FP3) for the upcoming race
 - Qualifying results if available
 - Recent race results (last 2-3 races) for form assessment
-- Any driver injuries, grid penalties, or reliability concerns
+- Any grid penalties or reliability concerns visible in the results
 - Updated fantasy prices if they've changed since last saved
-- **Weather forecast** for qualifying AND race day at the circuit location. Search for "{city} weather {qualifying date}" and "{city} weather {race date}". Note temperature, rain probability, and wind.
+- **Weather forecast** for qualifying AND race day at the circuit location. Search for "{city} weather {qualifying date}" and "{city} weather {race date}". Note temperature, rain probability, and wind. (Weather sites are allowed — this restriction only applies to race results.)
 
 ### 2b. Weather impact assessment
 
@@ -93,9 +109,10 @@ Then provide:
 
 ### 6. Save the pick
 
-Write the team pick to `data/2026-r{XX}-{race-name}-team-pick.md` where:
+Write the team pick to `data/r{XX}-{race-name}/team-pick.md` where:
 - `{XX}` is the round number (01, 02, etc.)
 - `{race-name}` is lowercase hyphenated (e.g. `australia`, `monaco`)
+- Create the round folder if it doesn't exist yet
 
 Update `data/2026-driver-lineups.md` with any new price information discovered.
 
