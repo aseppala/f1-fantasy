@@ -37,7 +37,7 @@ Saving all chips. Limitless is the anti-chip for this team — it removes the Fe
 | 2 | **Racing Bulls** | $6.9M | 6.0 | 0.87 | Budget constructor. Lindblad synergy. |
 | | **Constructors total** | **$30.5M** | | | |
 
-**Team total: $96.3M** ($3.7M buffer) | **Sim avg: 115.7 pts** | Std Dev: ±42.1 (HIGHEST variance)
+**Team total: $96.3M** | **Budget: $101.9M** ($5.6M buffer) | **Sim avg: 115.7 pts** | Std Dev: ±42.1 (HIGHEST variance)
 
 ### 2x Driver: Lewis Hamilton
 

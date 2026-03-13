@@ -83,23 +83,44 @@ Every race, you choose one driver as your **2x driver** — their points are dou
 
 ## Power Chips (6 Total)
 
-Only one chip per race weekend. Each can only be used once per season. 3 available from start, 3 unlock after Round 1.
+Only one chip per race weekend. Each can only be used once per season. Once activated, a chip cannot be cancelled. 3 available from Round 1, 3 unlock after Round 1.
 
-| Chip | Description | Available |
-|------|-------------|-----------|
-| **Limitless** | Unlimited transfers AND ignore the budget cap for one race week. Team returns to normal the following week. | From Round 2 |
-| **Wildcard** | Unlimited transfers but must stay within your budget cap. | From Round 2 |
-| **Final Fix** | Substitute one driver after lineups lock, before the Grand Prix. If the swapped driver had 2x boost, it transfers to the new driver. On sprint weekends, unlocks only after the Sprint. | From start |
-| **Auto Pilot** | Automatically gives 2x boost to whichever driver in your team scores the most points that weekend. | From start |
-| **No Negative** | Any negative points (DNFs, positions lost) are set to zero for that race week. Great for street circuits and wet races. | From start |
-| **x3 Boost** | One driver scores TRIPLE points. You can still assign 2x to a different driver, so two drivers get boosted (one x3, one x2). Cannot stack x3 and x2 on the same driver. | From Round 2 |
+### Chip Summary
 
-**Key chip strategy notes:**
-- Limitless is the most powerful chip — pick all premium drivers with no budget limit
-- x3 Boost + 2x on two different drivers = massive scoring potential
-- No Negative is best saved for wet races or street circuits (Monaco, Singapore)
-- Auto Pilot is useful when form is unclear — best around Rounds 4-5
-- Final Fix is insurance — use when a driver has a qualifying incident
+| Chip | Available | Description |
+|------|-----------|-------------|
+| **No Negative** | Round 1 | All negative points (DNFs, positions lost) become zero for that race week. Applied per scoring category, not just the overall total. |
+| **Auto Pilot** | Round 1 | Automatically gives 2x boost to whichever driver in your team scores the most points that weekend. Overrides your manual 2x pick. |
+| **Final Fix** | Round 1 | Swap ONE driver after lineups lock, before the race starts. If the swapped driver had 2x boost, it transfers to the new driver. |
+| **Limitless** | Round 2 | Unlimited transfers AND ignore the budget cap for one race week. Team returns to normal the following week (temporary). |
+| **Wildcard** | Round 2 | Unlimited transfers but must stay within your budget cap. Changes are permanent (unlike Limitless). |
+| **x3 Boost** | Round 2 | One driver scores TRIPLE points. You can still assign 2x to a different driver, so two drivers get boosted (one x3, one x2). Cannot stack x3 and x2 on the same driver. |
+
+### Chip Deadlines
+
+| Weekend Type | Chip Activation Deadline | Final Fix Deadline |
+|-------------|------------------------|--------------------|
+| **Normal weekend** | Before Qualifying | After Qualifying, before Race |
+| **Sprint weekend** | Before Sprint Race (after Sprint Qualifying) | After Sprint, before Race |
+
+### Key Rules
+
+- **Max 1 chip per weekend** — cannot combine chips (e.g., no Limitless + No Negative)
+- **Each chip is one-time use** — once used, gone for the season
+- **Limitless is temporary** — your team reverts to the pre-Limitless lineup after the weekend
+- **Wildcard is permanent** — transfers made with Wildcard stick
+- **x3 + 2x = two boosted drivers** — one at 3x, one at 2x, must be different drivers
+- **Auto Pilot vs manual 2x** — Auto Pilot retroactively picks your highest scorer; manual 2x is your pre-race choice
+- **Final Fix on sprint weekends** — only unlocks after the Sprint race, not before
+
+### Strategy Notes
+
+- **Limitless** is strongest on sprint weekends (more points available) with a clear pecking order
+- **x3 Boost** is strongest on sprint weekends too — deploy on your most confident pick
+- **No Negative** is best for wet races or street circuits (Monaco, Singapore, Baku) where DNF risk is high
+- **Auto Pilot** is useful when form is unclear or multiple drivers on your team could be top scorer
+- **Final Fix** is insurance — use when a driver has a qualifying incident or mechanical issue
+- **Wildcard** is best after a major form shift mid-season when multiple transfers are needed
 
 ## 2026 Rule Changes (vs 2025)
 

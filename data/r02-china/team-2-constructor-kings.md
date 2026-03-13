@@ -19,7 +19,7 @@
 | 6 | Mercedes (C) | $29.6M | +$0.3M |
 | 7 | Ferrari (C) | $23.6M | +$0.3M |
 
-**Current total: $96.6M** ($3.4M buffer)
+**Current squad value: $96.6M** | **Total budget: $101.2M** ($4.6M unspent from R01)
 
 ---
 
@@ -38,7 +38,7 @@
 
 ### Option B: Hadjar → Gasly + Ferrari (C) → McLaren (C) (2 transfers)
 - Gets the two best constructors (sim: 48.5 + 38.2 = 86.7, +3.5 over Option A)
-- **Budget check:** $12.2 + $8.0 + $7.9 + $6.8 + $6.2 + $29.6 + $28.8 = **$99.5M** ✓ ($0.5M buffer)
+- **Budget check:** $12.2 + $8.0 + $7.9 + $6.8 + $6.2 + $29.6 + $28.8 = **$99.5M** ✓ ($1.7M buffer from $101.2M)
 - Uses both transfers — no carry-over for R03
 - Only worth it if the +3.5 pts from McLaren > Ferrari outweighs losing the saved transfer
 
@@ -73,7 +73,7 @@ At $12.2M, Gasly is still better than Hadjar (+1.7 avg pts, $2.3M cheaper), and 
 | 2 | **Ferrari** | $23.6M | 34.7 | 1.47 | Keeping from R01. Hamilton SQ P4 + Leclerc SQ P6. Solid 3rd-best. |
 | | **Constructors total** | **$53.2M** | | | |
 
-**Team total: $94.3M** ($5.7M buffer) | 1 transfer saved for R03
+**Team total: $94.3M** | **Budget: $101.2M** ($6.9M buffer) | 1 transfer saved for R03
 
 ### 2x Driver: Oliver Bearman
 
@@ -97,5 +97,5 @@ The difference between Option A and B is ~2 pts — not worth burning the extra 
 
 1. [ ] Transfer: Hadjar ($14.5M) → Gasly ($12.2M)
 2. [ ] Set Bearman as 2x driver
-3. [ ] Confirm total: $94.3M ✓
+3. [ ] Confirm total: $94.3M within $101.2M budget ✓
 4. [ ] Save 2nd transfer for R03 carry-over
