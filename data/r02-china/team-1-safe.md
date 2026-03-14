@@ -59,9 +59,36 @@ Sprint Qualifying settled this debate:
 
 ---
 
+## Transfer & Chip Tracker
+
+| Field | Value |
+|-------|-------|
+| **Total budget** | $102.1M ($100M - $96.2M R01 cost = $3.8M bank + $98.3M squad value) |
+| **R02 Limitless squad** | $184.5M (Limitless ignores budget) |
+| **Free transfers available** | Unlimited (Limitless) |
+| **Transfers used R02** | Limitless (unlimited) |
+| **Carry-over to R03** | 0 (Limitless resets transfers) |
+| **Chip used R02** | **Limitless** |
+| **Chips remaining** | 5 (No Negative, Auto Pilot, Final Fix, Wildcard, x3 Boost) |
+
+### Pre-Limitless Squad (reverts to this for R03)
+
+| # | Pick | R01 Price | R02 Price |
+|---|------|-----------|-----------|
+| 1 | Charles Leclerc | $22.8M | $23.1M |
+| 2 | Kimi Antonelli | $23.2M | $23.5M |
+| 3 | Oliver Bearman | $7.4M | $8.0M |
+| 4 | Arvid Lindblad | $6.2M | $6.8M |
+| 5 | Valtteri Bottas | $5.9M | $5.3M |
+| 6 | Ferrari (C) | $23.3M | $23.6M |
+| 7 | Haas (C) | $7.4M | $8.0M |
+| | **Total** | **$96.2M** | **$98.3M** |
+
+**R03 starting point:** $98.3M squad + $3.8M bank = $102.1M budget, 2 free transfers (no carry-over from Limitless round).
+
 ## Before Locking In
 
 1. [ ] Activate Limitless chip on fantasy.formula1.com
 2. [ ] Set Russell as 2x driver
 3. [ ] Confirm all 5 premium drivers + 2 premium constructors
-4. [ ] Remember: team reverts after this weekend — plan R03 transfers
+4. [ ] Remember: team reverts to pre-Limitless squad for R03

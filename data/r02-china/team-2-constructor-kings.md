@@ -93,9 +93,22 @@ The difference between Option A and B is ~2 pts — not worth burning the extra 
 
 ---
 
+## Transfer & Chip Tracker
+
+| Field | Value |
+|-------|-------|
+| **Total budget** | $101.2M |
+| **R02 squad value** | $94.3M |
+| **Buffer** | $6.9M |
+| **Free transfers available** | 2 (no carry-over from R01 — first round) |
+| **Transfers used R02** | 1 (Hadjar → Gasly) |
+| **Carry-over to R03** | 1 (used 1 of 2) |
+| **Chip used R02** | None |
+| **Chips remaining** | All 6 (No Negative, Auto Pilot, Final Fix, Limitless, Wildcard, x3 Boost) |
+
 ## Before Locking In
 
 1. [ ] Transfer: Hadjar ($14.5M) → Gasly ($12.2M)
 2. [ ] Set Bearman as 2x driver
 3. [ ] Confirm total: $94.3M within $101.2M budget ✓
-4. [ ] Save 2nd transfer for R03 carry-over
+4. [ ] Save 2nd transfer → carry 1 into R03 (will have 3 free transfers)

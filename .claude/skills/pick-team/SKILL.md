@@ -15,6 +15,56 @@ The user may provide:
 - **Specific constraints** (e.g. "must include Verstappen", "no Aston Martin drivers")
 - **Chip to use** (e.g. "Limitless on Team 1") — default: follow strategy in `data/team-strategy.md`
 
+## Game Rules Reference
+
+### Team Composition
+- 5 drivers + 2 constructors
+- Max 2 drivers from the same constructor
+- Starting budget: $100M (but actual budget = $100M + any unspent amount from initial team selection)
+
+### Budget Mechanics
+- **Budget = starting budget + accumulated unspent amount.** If a team was built for $96.6M from a $100M cap, the budget is $100M, not $96.6M. But price appreciation/depreciation of owned assets changes the squad value, and the budget adjusts: `available budget = original budget cap + (current squad value - original squad cost)`. In practice, track the user's confirmed total budget per team.
+- **Limitless is temporary** — team reverts after the weekend, budget returns to pre-Limitless state
+- **Wildcard is permanent** — transfers stick, budget adjusts permanently
+
+### Transfer Rules
+- **2 free transfers per Grand Prix** per team
+- **1 unused transfer carries over** to the next round (max 1 — does NOT compound beyond that)
+- So you can have 2 or 3 free transfers in a given round (2 base + 0 or 1 carried over)
+- Extra transfers beyond free ones cost **-10 pts each**
+- Transfers are based on **net change from previous race** — swapping a driver out then back = 0 transfers used
+
+### Deadlines
+| Weekend Type | Team Lock / Chip Deadline | Final Fix Deadline |
+|-------------|------------------------|--------------------|
+| **Normal weekend** | Before Qualifying | After Qualifying, before Race |
+| **Sprint weekend** | Before Sprint Race (after Sprint Qualifying) | After Sprint, before Race |
+
+### 2x Driver (Captain)
+Every race, choose one driver for **double points**. This is NOT a chip — it's available every weekend. The single most important decision each round.
+
+### Power Chips (6 total, one-time use each, max 1 per weekend)
+
+| Chip | Available | Mechanics |
+|------|-----------|-----------|
+| **No Negative** | Round 1 | All negative points (DNFs, positions lost) become zero. Applied per scoring category. |
+| **Auto Pilot** | Round 1 | Automatically gives 2x to your highest-scoring driver. Overrides manual 2x pick. |
+| **Final Fix** | Round 1 | Swap ONE driver after lineups lock, before race start. 2x transfers to new driver if applicable. On sprint weekends, unlocks after Sprint only. |
+| **Limitless** | Round 2 | Unlimited transfers + ignore budget cap. Team reverts next week. |
+| **Wildcard** | Round 2 | Unlimited transfers, must stay within budget. Changes permanent. |
+| **x3 Boost** | Round 2 | One driver scores TRIPLE. Can still 2x a DIFFERENT driver. Cannot stack x3+2x on same driver. |
+
+Once activated, a chip **cannot be cancelled**.
+
+### Scoring Quick Reference
+
+**Qualifying:** P1=10, P2=9...P10=1, P11+=0, NC/DSQ=-5
+**Race:** P1=25, P2=18, P3=15, P4=12, P5=10, P6=8, P7=6, P8=4, P9=2, P10=1, P11+=0, DNF=-20
+**Bonus:** +1/position gained, +1/overtake, +10 fastest lap, +10 DOTD
+**Sprint:** P1=8...P8=1, DNF=-10, +5 fastest lap, +1/position gained, +1/overtake
+**Constructor Quali:** Both Q3=+10, Both Q2=+5, One Q3=+3, One Q2=+1, Both Q1=-1
+**Constructor Race:** Sum of both drivers' race points. Pit stop bonuses: <2.0s=+10, 2.0-2.19s=+10, 2.2-2.49s=+5, 2.5-2.99s=+2, fastest stop=+5 extra
+
 ## Steps
 
 ### 1. Load existing data
@@ -23,7 +73,6 @@ Read **all** of the following to build a complete picture:
 
 **Season-level files in `data/`:**
 - `data/2026-calendar.md` — race calendar, sprint weekends, race IDs for URL construction
-- `data/2026-fantasy-rules.md` — scoring system, chips, transfer rules
 - `data/2026-standings.md` — current driver and constructor championship standings
 - `data/2026-prices.md` — price tracker across rounds with ownership percentages
 - `data/2026-preseason-testing.md` — baseline pace data (less relevant as season progresses)
@@ -33,19 +82,19 @@ Read **all** of the following to build a complete picture:
 - `prices.md` — confirmed prices and deltas for that round
 - `qualifying.md` — full qualifying classification
 - `race.md` — full race result with finishing positions, gaps, DNFs, fastest lap
-- `practice.md` / `free-practice-1.md` — practice session results
-- `sprint-qualifying.md` — sprint qualifying results (sprint weekends only)
-- `team-1-safe.md`, `team-2-constructor-kings.md`, `team-3-ferrari-nuclear.md` — previous team picks
+- `free-practice-1.md`, `free-practice-2.md`, `free-practice-3.md` — practice sessions
+- `sprint-qualifying.md`, `sprint.md` — sprint weekend sessions
+- `team-1-safe.md`, `team-2-constructor-kings.md`, `team-3-ferrari-nuclear.md` — previous team picks (contain actual squad, budget, transfers used, chips used)
 
 **Current round folder (if it exists):**
 - Any practice, sprint qualifying, or qualifying results already saved
 - Any price data already captured
 
-Read **at minimum** the last 3 rounds of race results and prices to assess form trends.
+Read **at minimum** the last 3 rounds of data to assess form trends.
 
 ### 1b. Backfill missing round data
 
-For each previous round folder, check if the following files exist. If any are **missing**, fetch them from formula1.com and save them before proceeding:
+For each previous round folder, check if the following files exist. If any are **missing**, fetch them from formula1.com and save them:
 
 | File | URL pattern | When to fetch |
 |------|------------|---------------|
@@ -58,47 +107,30 @@ For each previous round folder, check if the following files exist. If any are *
 | `sprint.md` | `.../races/{race-id}/{race-name}/sprint-results` | Sprint weekends only |
 | `prices.md` | N/A — can only come from user | Flag as missing, ask user |
 
-Check `data/2026-calendar.md` to determine race IDs and whether each round is a sprint weekend.
+Use `data/2026-calendar.md` for race IDs and sprint weekend identification.
 
-Also update `data/2026-standings.md` with the latest driver and constructor championship standings from `https://www.formula1.com/en/results/2026/drivers` and `https://www.formula1.com/en/results/2026/team`.
-
-**File format conventions:**
-- Each file should have a heading with the round, GP name, session type, date, and circuit
-- Qualifying: full classification with Q1/Q2/Q3 times and laps
-- Race: full classification with position, driver, team, laps, time/gap/status, points. Include fastest lap holder, all DNFs/DNS with lap retired.
-- Practice: position, driver, team, time, gap to leader
-- Sprint: same format as race but for sprint distance
-- Prices: driver/constructor tables with price, delta from previous round, ownership %, fantasy points scored
+Also update `data/2026-standings.md` from `https://www.formula1.com/en/results/2026/drivers` and `https://www.formula1.com/en/results/2026/team`.
 
 ### 2. Assess form and trends
 
-Before researching new data, analyze what's already in the files:
-
 **Driver form (last 3 races):**
-For each driver, track:
 - Qualifying positions (trend: improving, stable, declining?)
 - Race finishing positions (trend)
 - Fantasy points scored per round
-- Price trajectory (rising = good form, falling = poor form or buy opportunity)
+- Price trajectory (rising = buy signal, falling = sell or buy-low opportunity)
 - DNF/DNS count (reliability flag)
 - Positions gained per race (overtaking ability)
 
 **Constructor form (last 3 races):**
-For each constructor, track:
-- Combined qualifying performance (both drivers in Q3? One in Q1?)
-- Combined race points
-- Fantasy points scored per round
-- Reliability (any DNFs from either driver?)
+- Combined qualifying performance (both Q3? one Q1?)
+- Combined race points and fantasy points
+- Reliability (any DNFs?)
 - Price trajectory
 
 **Pecking order evolution:**
-Compare the current pecking order against:
-- Preseason testing rankings
-- Round 1 results
-- Most recent round results
-Flag any teams that have moved up or down significantly.
+Compare current order against preseason testing, R01, and most recent round.
 
-Summarize findings as a **form table**:
+Summarize as a **form table**:
 
 | Driver | Last 3 Races | Trend | Reliability | Notes |
 |--------|-------------|-------|-------------|-------|
@@ -107,106 +139,99 @@ Summarize findings as a **form table**:
 
 **IMPORTANT: Only use formula1.com for race results, practice, qualifying, and standings data.**
 
-Use `data/2026-calendar.md` to find the correct race ID, then fetch results from formula1.com:
-- Practice: `https://www.formula1.com/en/results/2026/races/{race-id}/{race-name}/practice/{session-number}`
-- Sprint Qualifying: check if this is a sprint weekend first
-- Qualifying: `https://www.formula1.com/en/results/2026/races/{race-id}/{race-name}/qualifying`
-- Race results: `https://www.formula1.com/en/results/2026/races/{race-id}/{race-name}/race-result`
-- Driver standings: `https://www.formula1.com/en/results/2026/drivers`
-
-Fetch all available sessions for the current weekend. Save each to the round folder as separate files:
-- `free-practice-1.md`, `free-practice-2.md`, `free-practice-3.md`
-- `sprint-qualifying.md` (sprint weekends)
-- `qualifying.md`
+Use `data/2026-calendar.md` for the race ID, then fetch all available sessions. Save each to the round folder as separate files.
 
 **Weather forecast:**
 Search for "{city} weather {qualifying date}" and "{city} weather {race date}".
-- Race day weather carries MORE weight than qualifying weather
-- Rain → high variance, favors wet-weather specialists, consider No Negative chip
-- Extreme heat → tire degradation, favors teams with good tire management
+- Rain → high variance, consider No Negative chip
+- Extreme heat → tire degradation concerns
 - Dry/mild → rely on practice pace data
 
-### 4. Determine current prices and budget
+### 4. Determine budget and transfers per team
 
-Check the most recent `prices.md` file for confirmed prices. If the user provides updated prices, use those.
+For each of the 3 teams, read the **previous round's team file** to extract:
 
-For each of the 3 teams, calculate:
-- Current squad value (what was locked in last round, adjusted for price changes)
-- Available budget
-- Free transfers available (2 per round, +1 carry-over if unused last round)
+1. **Actual squad** — the 5 drivers + 2 constructors that were locked in
+2. **Total budget** — the confirmed budget (may be >$100M if unspent from R01). If not recorded, ask the user.
+3. **Chips used so far** — track which chips each team has already spent
+4. **Transfers used last round** — determines carry-over
+
+Then calculate:
+
+| Field | How to calculate |
+|-------|-----------------|
+| **Current squad value** | Sum of current prices of locked-in picks (prices change between rounds) |
+| **Total budget** | As recorded in previous team file. Budget grows/shrinks with price changes of owned assets. |
+| **Free transfers** | 2 base + 1 carry-over if <2 were used last round (max 3 total) |
+| **Available chips** | 6 minus any already used. Check availability (Round 1 vs Round 2 chips). |
+| **Buffer** | Total budget - current squad value |
+
+Present a **budget summary table** at the top of each team pick:
+
+| Team | Squad Value | Budget | Buffer | Free Transfers | Chips Remaining |
+|------|------------|--------|--------|---------------|----------------|
 
 ### 5. Analyze value
 
 For each potential pick, calculate:
-- **Expected Points** based on form, practice pace, and circuit characteristics
+- **Expected Points** from form + practice pace + circuit characteristics
 - **PPM = Expected Points / Price**
-- **Price trend** — is the driver likely to rise or fall after this round?
-- **Ownership %** — low ownership = differentiation opportunity in friends league
+- **Price trend** — likely to rise or fall?
+- **Ownership %** — low ownership = differentiation in friends league
 
 Flag:
-- Drivers with high PPM who are rising in price (buy before they get expensive)
-- Drivers with declining form who are still expensive (avoid or sell)
-- Budget drivers who could score big from overtaking (qualify low, race high)
+- High PPM + rising price → buy before they get expensive
+- Declining form + still expensive → sell
+- Budget drivers who qualify low but race high → overtaking value
 
 ### 6. Build teams
 
 Read `data/team-strategy.md` for the three strategies, then build each team:
 
-**Team 1: "Safe"**
-- Follow the dominant constructor, don't bet against the best team
-- 1-2 premium drivers from the top team(s)
-- Budget-second-driver approach (cheaper driver from top teams)
-- 2x on the form driver of the dominant team
-
-**Team 2: "Constructor Kings"**
-- Stack the 2 best constructors
-- Budget drivers only (no $20M+ drivers)
-- 2x on the highest-ceiling budget driver
-- Maximize constructor synergy
-
-**Team 3: "Ferrari Nuclear"**
-- Both Ferrari drivers + Ferrari constructor, always
-- 2x on whichever Ferrari driver is faster this weekend
-- Never dilute the Ferrari concentration
-- Run a Ferrari Health Check (see strategy file)
+**Team 1: "Safe"** — Ride the dominant constructor
+**Team 2: "Constructor Kings"** — 2 best constructors, budget drivers
+**Team 3: "Ferrari Nuclear"** — Both Ferrari drivers + constructor, always
 
 For each team, respect:
-- $100M budget (unless using Limitless)
+- **Actual budget** for that team (not $100M — use the confirmed figure)
 - Max 2 drivers from the same constructor
-- Available transfers (only changes from last round's team that fit within free transfer count)
+- **Available free transfers** — only propose changes that fit within the free transfer count. If more changes are needed, explicitly note the -10 pts penalty per extra transfer and whether it's worth it.
 - Chip strategy per team from `data/team-strategy.md`
+
+When Limitless is active, budget and transfer limits are ignored but note what the team reverts to afterward.
 
 ### 7. Run scoring simulation
 
-Update `simulator.py` with current weekend profiles based on practice/qualifying data, then run:
+Update `simulator.py` with current weekend profiles, then run:
 ```bash
 python simulator.py --race {race} --sims 10000 --seed 42
 ```
 
-Include team variants to test key decisions:
-- Alternative 2x captain choices
-- Alternative driver swaps
-- Different constructor pairings
-
-If simulation disagrees with manual analysis, investigate and explain why.
+Include variants to test key decisions per team.
 
 ### 8. Present each team
 
 For each of the 3 teams, output:
 
-**Header:** Team name, chip used (or "None"), strategy summary
+**Budget & Transfer Status:**
+| Squad Value | Budget | Buffer | Free Transfers | Chips Used | Chips Remaining |
+|------------|--------|--------|---------------|------------|-----------------|
 
-**Driver table:**
+**Driver table (with sum row):**
 | # | Driver | Team | Price | Exp. Pts | PPM | Rationale |
+| | **Drivers total** | | **$XX.XM** | | | |
 
-**Constructor table:**
+**Constructor table (with sum row):**
 | # | Constructor | Price | Exp. Pts | PPM | Rationale |
+| | **Constructors total** | | **$XX.XM** | | | |
+
+**Team total: $XX.XM** | **Budget: $XX.XM** ($X.XM buffer)
 
 **Footer:**
-- Total cost and budget remaining
 - Simulation average, std dev, min, max
 - 2x driver choice and reasoning
-- Transfers made from previous round
+- Transfers made from previous round (list each swap)
+- Free transfers remaining after this round (affects carry-over to next round)
 - Key risks
 
 Then a **simulation comparison table** across all teams and variants.
@@ -220,21 +245,24 @@ Save each team to a separate file:
 - `data/r{XX}-{race-name}/team-2-constructor-kings.md`
 - `data/r{XX}-{race-name}/team-3-ferrari-nuclear.md`
 
-Save session results to separate files:
-- `data/r{XX}-{race-name}/free-practice-1.md` (etc.)
-- `data/r{XX}-{race-name}/sprint-qualifying.md`
-- `data/r{XX}-{race-name}/prices.md` (if new price data available)
+Each team file MUST include in its header:
+- **Actual squad** (drivers + constructors with prices)
+- **Total budget** for this team
+- **Transfers used** this round and carry-over status
+- **Chip used** this round (if any)
+- **Chips remaining** for the season
 
-Update `data/2026-standings.md` if new race results are available.
+This data is essential for the next round's calculations.
 
-Do NOT overwrite `data/2026-prices.md` — that file is the master tracker and should only be updated with confirmed prices from the user.
+Save session results to separate files. Update `data/2026-standings.md` if new results available. Do NOT overwrite `data/2026-prices.md` — only update with confirmed prices from the user.
 
 ## Important Notes
 
-- Constructors score from BOTH drivers — a constructor with two top-5 drivers beats one with a P1 and a P15
-- Overtaking points matter — drivers who qualify low but race high have hidden value
-- Price changes weigh last 3 races equally — factor in trajectory, not just this week
-- In a friends league, differentiation wins — don't just copy the consensus team
-- When uncertain between two picks at similar price, prefer the one with higher ceiling
-- Sprint weekends are worth ~30-50% more points — factor this into chip decisions
-- Always use confirmed prices from the user or from `prices.md` files — do not estimate prices
+- Constructors score from BOTH drivers — two top-5 finishers beats P1 + P15
+- Overtaking points are hidden value — drivers who qualify low but race high
+- Price changes weigh last 3 races equally — factor trajectory, not just this week
+- In a friends league, differentiation wins — don't copy the consensus team
+- When uncertain between two picks at similar price, prefer higher ceiling
+- Sprint weekends = ~30-50% more points — factor into chip decisions
+- Always use confirmed prices from `prices.md` files — never estimate prices
+- Always track and display the actual budget per team, not the default $100M

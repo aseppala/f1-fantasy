@@ -80,6 +80,19 @@ Worst case remains ugly: double DNF = -40 (Hamilton 2x) + -20 (Leclerc) + -40 (c
 
 ---
 
+## Transfer & Chip Tracker
+
+| Field | Value |
+|-------|-------|
+| **Total budget** | $101.9M |
+| **R02 squad value** | $96.3M |
+| **Buffer** | $5.6M |
+| **Free transfers available** | 2 (no carry-over from R01 — first round) |
+| **Transfers used R02** | 0 (no changes from R01) |
+| **Carry-over to R03** | 1 (used 0 of 2, max carry-over is 1) |
+| **Chip used R02** | None |
+| **Chips remaining** | All 6 (No Negative, Auto Pilot, Final Fix, Limitless, Wildcard, x3 Boost) |
+
 ## Before Locking In
 
 1. [ ] Confirm Leclerc + Hamilton + Ferrari constructor are set
