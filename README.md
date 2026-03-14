@@ -4,6 +4,8 @@ AI-assisted F1 Fantasy team management for the 2026 season, built on [Claude Cod
 
 Runs three differentiated fantasy teams in a friends league on [fantasy.formula1.com](https://fantasy.formula1.com), using Monte Carlo simulation, form analysis, and value optimization to make data-driven picks each round.
 
+See the [User Guide](USER-GUIDE.md) for setup, workflow, and skill reference.
+
 ## How It Works
 
 The system is a set of Claude Code **skills** (individual tasks) orchestrated by an **agent** (end-to-end pipeline). Each skill can be invoked independently via slash commands or chained together by the agent for a full race weekend workflow.
