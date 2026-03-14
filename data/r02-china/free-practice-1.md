@@ -8,30 +8,40 @@
 
 ## FP1 Classification (Friday, March 13)
 
-| Pos | Driver | Team | Time | Gap |
-|-----|--------|------|------|-----|
-| 1 | George Russell | Mercedes | 1:32.741 | - |
-| 2 | Kimi Antonelli | Mercedes | - | +0.120s |
-| 3 | Lando Norris | McLaren | - | +0.555s |
-| 4 | Oscar Piastri | McLaren | - | +0.731s |
-| 5 | Charles Leclerc | Ferrari | - | +0.858s |
-| 6 | Lewis Hamilton | Ferrari | - | +1.388s |
-| 7 | Oliver Bearman | Haas | - | +1.685s |
-| 8 | Max Verstappen | Red Bull | - | +1.800s |
-| 9 | Nico Hulkenberg | Audi | - | +1.898s |
-| 10 | Pierre Gasly | Alpine | - | +1.935s |
-| 11 | Liam Lawson | Racing Bulls | - | +2.032s |
-| 12 | Gabriel Bortoleto | Audi | - | +2.087s |
-| 13 | Isack Hadjar | Red Bull | - | +2.115s |
-| 14 | Esteban Ocon | Haas | - | +2.136s |
-| 15 | Franco Colapinto | Alpine | - | +2.206s |
-| 16 | Alexander Albon | Williams | - | +2.739s |
-| 17 | Carlos Sainz | Williams | - | +2.938s |
-| 18 | Fernando Alonso | Aston Martin | - | +3.115s |
-| 19 | Valtteri Bottas | Cadillac | - | +3.316s |
-| 20 | Lance Stroll | Aston Martin | - | +4.483s |
-| 21 | Arvid Lindblad | Racing Bulls | - | +5.155s |
-| 22 | Sergio Perez | Cadillac | - | +6.459s |
+| Pos | Driver | Team | Time | Gap | Tire |
+|-----|--------|------|------|-----|------|
+| 1 | George Russell | Mercedes | 1:32.741 | - | Soft |
+| 2 | Kimi Antonelli | Mercedes | - | +0.120s | Soft |
+| 3 | Lando Norris | McLaren | - | +0.555s | Soft (used) |
+| 4 | Oscar Piastri | McLaren | - | +0.731s | Soft |
+| 5 | Charles Leclerc | Ferrari | - | +0.858s | Soft |
+| 6 | Lewis Hamilton | Ferrari | - | +1.388s | Soft (used) |
+| 7 | Oliver Bearman | Haas | - | +1.685s | Soft |
+| 8 | Max Verstappen | Red Bull | - | +1.800s | Soft |
+| 9 | Nico Hulkenberg | Audi | - | +1.898s | Soft |
+| 10 | Pierre Gasly | Alpine | - | +1.935s | Soft |
+| 11 | Liam Lawson | Racing Bulls | - | +2.032s | Soft |
+| 12 | Gabriel Bortoleto | Audi | - | +2.087s | Soft |
+| 13 | Isack Hadjar | Red Bull | - | +2.115s | Soft |
+| 14 | Esteban Ocon | Haas | - | +2.136s | Soft |
+| 15 | Franco Colapinto | Alpine | - | +2.206s | Soft |
+| 16 | Alexander Albon | Williams | - | +2.739s | Soft |
+| 17 | Carlos Sainz | Williams | - | +2.938s | Soft |
+| 18 | Fernando Alonso | Aston Martin | - | +3.115s | Soft |
+| 19 | Valtteri Bottas | Cadillac | - | +3.316s | Soft |
+| 20 | Lance Stroll | Aston Martin | - | +4.483s | Soft |
+| 21 | Arvid Lindblad | Racing Bulls | - | +5.155s | Soft |
+| 22 | Sergio Perez | Cadillac | - | +6.459s | Soft |
+
+### Best Times per Compound
+
+| Compound | Best Time | Driver | Notes |
+|----------|-----------|--------|-------|
+| Soft (C4) | 1:32.741 | Russell | Final qualifying sim runs |
+| Medium (C3) | — | — | Initial runs; no individual times published. Most drivers started on Mediums before switching to Softs. |
+| Hard (C2) | — | — | Not used in session |
+
+**Tire notes:** Sprint weekend with single practice session. All drivers set fastest laps on Soft compound during qualifying simulations in the final quarter. Norris's P3 time was on used Softs. Hamilton spun early on Mediums, switched to Softs earlier than planned (4-lap-old set for his fastest).
 
 ### FP1 Key Observations
 

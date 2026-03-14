@@ -3,6 +3,8 @@
 **Session:** Sprint Qualifying (SQ1/SQ2/SQ3)
 **Date:** Friday, March 13, 2026
 **Conditions:** Clear, 3-15C, wind gusts to 29 km/h. Dry.
+**Tire allocation:** C2 (Hard) / C3 (Medium) / C4 (Soft)
+**Compound rules:** SQ1 = Soft, SQ2 = Medium (mandatory), SQ3 = Soft
 
 ---
 
