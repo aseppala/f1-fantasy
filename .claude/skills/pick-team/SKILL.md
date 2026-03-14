@@ -6,7 +6,7 @@ user_invocable: true
 
 # F1 Fantasy Team Picker
 
-Pick optimal F1 Fantasy teams for an upcoming race weekend. Produces three team picks following distinct strategies.
+Pick optimal F1 Fantasy teams for an upcoming race weekend. Produces team picks following the strategies defined in `data/team-strategy.md`.
 
 ## Input
 
@@ -67,6 +67,18 @@ Once activated, a chip **cannot be cancelled**.
 
 ## Steps
 
+### 0. Validate strategy file
+
+Check if `data/team-strategy.md` exists.
+
+**If missing**, use `AskUserQuestion` to interview the user:
+1. How many teams do you want to run? (default: 3)
+2. For each team: name, philosophy (1-2 sentences), construction approach, 2x driver preference, chip strategy, risk tolerance
+
+Save responses to `data/team-strategy.md` using a structured format with one section per team.
+
+**If it exists**, read it and extract team names and slugs for use throughout the workflow. The slug is the lowercase, hyphen-separated team name (e.g. "Constructor Kings" → `constructor-kings`).
+
 ### 1. Load existing data
 
 Read **all** of the following to build a complete picture:
@@ -76,7 +88,7 @@ Read **all** of the following to build a complete picture:
 - `data/2026-standings.md` — current driver and constructor championship standings
 - `data/2026-prices.md` — price tracker across rounds with ownership percentages
 - `data/2026-preseason-testing.md` — baseline pace data (less relevant as season progresses)
-- `data/team-strategy.md` — the three team strategies (Safe, Constructor Kings, Ferrari Nuclear)
+- `data/team-strategy.md` — team strategies (names, philosophies, construction rules, chip plans). **Single source of truth** for team identities.
 
 **Previous round folders (`data/r{XX}-{race-name}/`):**
 - `prices.md` — confirmed prices and deltas for that round
@@ -84,7 +96,7 @@ Read **all** of the following to build a complete picture:
 - `race.md` — full race result with finishing positions, gaps, DNFs, fastest lap
 - `free-practice-1.md`, `free-practice-2.md`, `free-practice-3.md` — practice sessions (include tire allocation header, Tire column, and best times per compound)
 - `sprint-qualifying.md`, `sprint.md` — sprint weekend sessions
-- `team-1-safe.md`, `team-2-constructor-kings.md`, `team-3-ferrari-nuclear.md` — previous team picks (contain actual squad, budget, transfers used, chips used)
+- `team-{N}-{slug}.md` — one file per team defined in strategy (e.g. `team-1-safe.md`, `team-2-constructor-kings.md`), containing actual squad, budget, transfers used, chips used
 
 **Current round folder (if it exists):**
 - Any practice, sprint qualifying, or qualifying results already saved
@@ -155,7 +167,7 @@ Search for "{city} weather {qualifying date}" and "{city} weather {race date}".
 
 ### 4. Determine budget and transfers per team
 
-For each of the 3 teams, read the **previous round's team file** to extract:
+For each team defined in `data/team-strategy.md`, read the **previous round's team file** to extract:
 
 1. **Actual squad** — the 5 drivers + 2 constructors that were locked in
 2. **Total budget** — the confirmed budget (may be >$100M if unspent from R01). If not recorded, ask the user.
@@ -192,11 +204,7 @@ Flag:
 
 ### 6. Build teams
 
-Read `data/team-strategy.md` for the three strategies, then build each team:
-
-**Team 1: "Safe"** — Ride the dominant constructor
-**Team 2: "Constructor Kings"** — 2 best constructors, budget drivers
-**Team 3: "Ferrari Nuclear"** — Both Ferrari drivers + constructor, always
+Read `data/team-strategy.md`. For each team defined there, build a squad following that team's philosophy, construction rules, 2x driver guidance, and chip strategy.
 
 For each team, respect:
 - **Actual budget** for that team (not $100M — use the confirmed figure)
@@ -208,16 +216,16 @@ When Limitless is active, budget and transfer limits are ignored but note what t
 
 ### 7. Run scoring simulation
 
-Update `simulator.py` with current weekend profiles, then run:
+Update `.claude/skills/pick-team/simulator.py` with current weekend profiles, then run:
 ```bash
-python simulator.py --race {race} --sims 10000 --seed 42
+python .claude/skills/pick-team/simulator.py --race {race} --sims 10000 --seed 42
 ```
 
 Include variants to test key decisions per team.
 
 ### 8. Present each team
 
-For each of the 3 teams, output:
+For each team, output:
 
 **Budget & Transfer Status:**
 | Squad Value | Budget | Buffer | Free Transfers | Chips Used | Chips Remaining |
@@ -246,10 +254,7 @@ Then a **simulation comparison table** across all teams and variants.
 
 Create the round folder `data/r{XX}-{race-name}/` if it doesn't exist.
 
-Save each team to a separate file:
-- `data/r{XX}-{race-name}/team-1-safe.md`
-- `data/r{XX}-{race-name}/team-2-constructor-kings.md`
-- `data/r{XX}-{race-name}/team-3-ferrari-nuclear.md`
+Save each team to `data/r{XX}-{race-name}/team-{N}-{slug}.md` where `{N}` is the team number (1, 2, 3, ...) and `{slug}` is derived from the team name in `data/team-strategy.md` (lowercase, hyphens for spaces, e.g. "Constructor Kings" → `constructor-kings`).
 
 Each team file MUST include in its header:
 - **Actual squad** (drivers + constructors with prices)
