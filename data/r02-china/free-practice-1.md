@@ -2,6 +2,7 @@
 
 **Circuit:** Shanghai International Circuit
 **Format:** Sprint Weekend (FP1 only — no FP2/FP3 on sprint weekends)
+**Tire allocation:** C2 (Hard) / C3 (Medium) / C4 (Soft)
 
 ---
 

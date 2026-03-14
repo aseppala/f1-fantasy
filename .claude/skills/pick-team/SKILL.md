@@ -82,7 +82,7 @@ Read **all** of the following to build a complete picture:
 - `prices.md` — confirmed prices and deltas for that round
 - `qualifying.md` — full qualifying classification
 - `race.md` — full race result with finishing positions, gaps, DNFs, fastest lap
-- `free-practice-1.md`, `free-practice-2.md`, `free-practice-3.md` — practice sessions
+- `free-practice-1.md`, `free-practice-2.md`, `free-practice-3.md` — practice sessions (include tire allocation header, Tire column, and best times per compound)
 - `sprint-qualifying.md`, `sprint.md` — sprint weekend sessions
 - `team-1-safe.md`, `team-2-constructor-kings.md`, `team-3-ferrari-nuclear.md` — previous team picks (contain actual squad, budget, transfers used, chips used)
 
@@ -140,6 +140,12 @@ Summarize as a **form table**:
 **IMPORTANT: Only use formula1.com for race results, practice, qualifying, and standings data.**
 
 Use `data/2026-calendar.md` for the race ID, then fetch all available sessions. Save each to the round folder as separate files.
+
+**Tire compound data:**
+For each round, collect and record tire information:
+1. **Compound allocation** — Search for the Pirelli press release or F1.com preview article ("What tyres will the teams have for the {race name}") to find which C1-C5 compounds are designated Hard/Medium/Soft. Add this as a `**Tire allocation:**` line in the header of each practice/qualifying file.
+2. **Per-driver tire usage** — After practice sessions, search CoffeeCornerMotorsport.com for "{race name} 2026 Tyre Strategy" to find best times per compound and which tire each driver used for their fastest lap. Add a `Tire` column to practice result tables (Soft/Medium/Hard). If per-driver data is unavailable, note "Soft" for fastest-lap times (standard practice behavior) and add a "Best Times per Compound" reference table at the bottom.
+3. **Pace analysis** — When comparing practice times, always account for tire compound. A driver P5 on mediums may have better true pace than P1 on softs. The "Best Times per Compound" table enables compound-normalized comparisons.
 
 **Weather forecast:**
 Search for "{city} weather {qualifying date}" and "{city} weather {race date}".
