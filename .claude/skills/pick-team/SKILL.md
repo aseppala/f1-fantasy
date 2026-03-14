@@ -1,12 +1,12 @@
 ---
 name: pick-team
-description: F1 Fantasy Team Picker
-user_invocable: true
+description: Build F1 Fantasy team selections from analyzed data
+user-invocable: true
 ---
 
-# F1 Fantasy Team Picker
+# F1 Fantasy Team Builder
 
-Pick optimal F1 Fantasy teams for an upcoming race weekend. Produces team picks following the strategies defined in `data/team-strategy.md`.
+Build optimal F1 Fantasy team picks for an upcoming race weekend. This skill assumes data has already been fetched and analyzed (by the `f1-fantasy` agent or individual skills). It focuses on team construction, not data gathering.
 
 ## Input
 
@@ -67,7 +67,7 @@ Once activated, a chip **cannot be cancelled**.
 
 ## Steps
 
-### 0. Validate strategy file
+### 1. Validate strategy file
 
 Check if `data/team-strategy.md` exists.
 
@@ -79,104 +79,22 @@ Save responses to `data/team-strategy.md` using a structured format with one sec
 
 **If it exists**, read it and extract team names and slugs for use throughout the workflow. The slug is the lowercase, hyphen-separated team name (e.g. "Constructor Kings" → `constructor-kings`).
 
-### 1. Load existing data
+### 2. Load analyzed data
 
-Read **all** of the following to build a complete picture:
+Read the following (all should already exist from prior skill runs):
 
-**Season-level files in `data/`:**
-- `data/2026-calendar.md` — race calendar, sprint weekends, race IDs for URL construction
-- `data/2026-standings.md` — current driver and constructor championship standings
-- `data/2026-prices.md` — price tracker across rounds with ownership percentages
-- `data/2026-preseason-testing.md` — baseline pace data (less relevant as season progresses)
-- `data/team-strategy.md` — team strategies (names, philosophies, construction rules, chip plans). **Single source of truth** for team identities.
+- `data/team-strategy.md` — team strategies
+- Previous round team files (`data/r{XX}-{race-name}/team-{N}-{slug}.md`) — current squads, budgets, transfers
+- Current round analysis files (if available):
+  - `form-analysis.md` (from `/analyze-form`)
+  - `value-analysis.md` (from `/analyze-value`)
+  - Transfer recommendations (from `/optimize-transfers`)
+  - Simulation results (from `/simulate`)
+- Current prices from latest `prices.md` or `fantasy-points.md`
 
-**Previous round folders (`data/r{XX}-{race-name}/`):**
-- `prices.md` — confirmed prices and deltas for that round
-- `qualifying.md` — full qualifying classification
-- `race.md` — full race result with finishing positions, gaps, DNFs, fastest lap
-- `free-practice-1.md`, `free-practice-2.md`, `free-practice-3.md` — practice sessions (include tire allocation header, Tire column, and best times per compound)
-- `sprint-qualifying.md`, `sprint.md` — sprint weekend sessions
-- `team-{N}-{slug}.md` — one file per team defined in strategy (e.g. `team-1-safe.md`, `team-2-constructor-kings.md`), containing actual squad, budget, transfers used, chips used
+If analysis files don't exist, inform the user they should run the analysis skills first (or use the `f1-fantasy` agent for the full pipeline).
 
-**Current round folder (if it exists):**
-- Any practice, sprint qualifying, or qualifying results already saved
-- Any price data already captured
-
-Read **at minimum** the last 3 rounds of data to assess form trends.
-
-### 1b. Backfill missing round data
-
-For each previous round folder, check if the following files exist. If any are **missing**, fetch them from formula1.com and save them:
-
-| File | URL pattern | When to fetch |
-|------|------------|---------------|
-| `qualifying.md` | `.../races/{race-id}/{race-name}/qualifying` | Always |
-| `race.md` | `.../races/{race-id}/{race-name}/race-result` | Always (include fastest lap from `.../fastest-laps`) |
-| `free-practice-1.md` | `.../races/{race-id}/{race-name}/practice/1` | Always |
-| `free-practice-2.md` | `.../races/{race-id}/{race-name}/practice/2` | Only non-sprint weekends |
-| `free-practice-3.md` | `.../races/{race-id}/{race-name}/practice/3` | Only non-sprint weekends |
-| `sprint-qualifying.md` | `.../races/{race-id}/{race-name}/sprint-qualifying` | Sprint weekends only |
-| `sprint.md` | `.../races/{race-id}/{race-name}/sprint-results` | Sprint weekends only |
-| `prices.md` | N/A — can only come from user | Flag as missing, ask user |
-| `fantasy-points.md` | `https://fantasy.formula1.com/feeds/drivers/{gamedayId}_en.json` | After race completion (all SessionWisePoints non-null) |
-
-Use `data/2026-calendar.md` for race IDs and sprint weekend identification. `{gamedayId}` = round number (1 = Australia, 2 = China, etc.).
-
-**Fantasy points backfill instructions:**
-- Fetch the JSON for each completed round
-- The feed contains both drivers (`Skill: 1`) and constructors (`Skill: 2`) in the same response
-- Save to `data/r{XX}-{race-name}/fantasy-points.md` using the format defined below
-- Key fields: `GamedayPoints` (this round), `OverallPpints` (cumulative), `Value`/`OldPlayerValue` (prices), `SelectedPercentage`/`CaptainSelectedPercentage` (ownership), `SessionWisePoints[]` (per-session breakdown), `AdditionalStats` (overtakes, DOTD, fastest lap, position pts, DNF pts, VFM)
-- Mid-round fetches show `null` for incomplete sessions — note this in the file header
-- No authentication required
-
-Also update `data/2026-standings.md` from `https://www.formula1.com/en/results/2026/drivers` and `https://www.formula1.com/en/results/2026/team`.
-
-### 2. Assess form and trends
-
-**Driver form (last 3 races) — use `fantasy-points.md` files as primary data source:**
-- `GamedayPoints` per round (actual fantasy points, not estimates)
-- `SessionWisePoints[]` breakdown (Qualifying vs Race vs Sprint contributions)
-- `AdditionalStats`: overtakes, DOTD, fastest lap, position pts — reveals hidden value
-- Price trajectory from `Value`/`OldPlayerValue` (rising = buy signal, falling = sell or buy-low)
-- `SelectedPercentage` and `CaptainSelectedPercentage` — ownership for differentiation analysis
-- DNF/DQ penalty points from `AdditionalStats.total_dnf_dq_pts` (reliability flag)
-- `AdditionalStats.total_position_gained_lost` (overtaking ability)
-
-**Constructor form (last 3 races) — use `fantasy-points.md` files as primary data source:**
-- `GamedayPoints` per round (actual combined fantasy points)
-- Qualifying bonus from `SessionWisePoints[]` (both Q3? one Q1?)
-- `AdditionalStats`: overtakes, pit stop bonuses, position pts
-- Reliability from `AdditionalStats.total_dnf_dq_pts`
-- Price trajectory and `SelectedPercentage` for ownership analysis
-
-**Pecking order evolution:**
-Compare current order against preseason testing, R01, and most recent round.
-
-Summarize as a **form table**:
-
-| Driver | Last 3 Races | Trend | Reliability | Notes |
-|--------|-------------|-------|-------------|-------|
-
-### 3. Research current weekend
-
-**IMPORTANT: Only use formula1.com for race results, practice, qualifying, and standings data.**
-
-Use `data/2026-calendar.md` for the race ID, then fetch all available sessions. Save each to the round folder as separate files.
-
-**Tire compound data:**
-For each round, collect and record tire information:
-1. **Compound allocation** — Search for the Pirelli press release or F1.com preview article ("What tyres will the teams have for the {race name}") to find which C1-C5 compounds are designated Hard/Medium/Soft. Add this as a `**Tire allocation:**` line in the header of each practice/qualifying file.
-2. **Per-driver tire usage** — After practice sessions, search CoffeeCornerMotorsport.com for "{race name} 2026 Tyre Strategy" to find best times per compound and which tire each driver used for their fastest lap. Add a `Tire` column to practice result tables (Soft/Medium/Hard). If per-driver data is unavailable, note "Soft" for fastest-lap times (standard practice behavior) and add a "Best Times per Compound" reference table at the bottom.
-3. **Pace analysis** — When comparing practice times, always account for tire compound. A driver P5 on mediums may have better true pace than P1 on softs. The "Best Times per Compound" table enables compound-normalized comparisons.
-
-**Weather forecast:**
-Search for "{city} weather {qualifying date}" and "{city} weather {race date}".
-- Rain → high variance, consider No Negative chip
-- Extreme heat → tire degradation concerns
-- Dry/mild → rely on practice pace data
-
-### 4. Determine budget and transfers per team
+### 3. Determine budget and transfers per team
 
 For each team defined in `data/team-strategy.md`, read the **previous round's team file** to extract:
 
@@ -195,27 +113,11 @@ Then calculate:
 | **Available chips** | 6 minus any already used. Check availability (Round 1 vs Round 2 chips). |
 | **Buffer** | Total budget - current squad value |
 
-Present a **budget summary table** at the top of each team pick:
+### 4. Build teams
 
-| Team | Squad Value | Budget | Buffer | Free Transfers | Chips Remaining |
-|------|------------|--------|--------|---------------|----------------|
+For each team defined in `data/team-strategy.md`, build a squad following that team's philosophy, construction rules, 2x driver guidance, and chip strategy.
 
-### 5. Analyze value
-
-For each potential pick, calculate:
-- **Expected Points** from form + practice pace + circuit characteristics
-- **PPM = Expected Points / Price**
-- **Price trend** — likely to rise or fall?
-- **Ownership %** — low ownership = differentiation in friends league
-
-Flag:
-- High PPM + rising price → buy before they get expensive
-- Declining form + still expensive → sell
-- Budget drivers who qualify low but race high → overtaking value
-
-### 6. Build teams
-
-Read `data/team-strategy.md`. For each team defined there, build a squad following that team's philosophy, construction rules, 2x driver guidance, and chip strategy.
+If transfer recommendations exist (from `/optimize-transfers`), apply them. Otherwise, determine transfers independently.
 
 For each team, respect:
 - **Actual budget** for that team (not $100M — use the confirmed figure)
@@ -225,16 +127,7 @@ For each team, respect:
 
 When Limitless is active, budget and transfer limits are ignored but note what the team reverts to afterward.
 
-### 7. Run scoring simulation
-
-Update `.claude/skills/pick-team/simulator.py` with current weekend profiles, then run:
-```bash
-python .claude/skills/pick-team/simulator.py --race {race} --sims 10000 --seed 42
-```
-
-Include variants to test key decisions per team.
-
-### 8. Present each team
+### 5. Present each team
 
 For each team, output:
 
@@ -253,15 +146,15 @@ For each team, output:
 **Team total: $XX.XM** | **Budget: $XX.XM** ($X.XM buffer)
 
 **Footer:**
-- Simulation average, std dev, min, max
+- Simulation average, std dev, min, max (if simulation was run)
 - 2x driver choice and reasoning
 - Transfers made from previous round (list each swap)
 - Free transfers remaining after this round (affects carry-over to next round)
 - Key risks
 
-Then a **simulation comparison table** across all teams and variants.
+Then a **simulation comparison table** across all teams and variants (if simulation data available).
 
-### 9. Save outputs
+### 6. Save outputs
 
 Create the round folder `data/r{XX}-{race-name}/` if it doesn't exist.
 
@@ -275,8 +168,6 @@ Each team file MUST include in its header:
 - **Chips remaining** for the season
 
 This data is essential for the next round's calculations.
-
-Save session results to separate files. Update `data/2026-standings.md` if new results available. Do NOT overwrite `data/2026-prices.md` — only update with confirmed prices from the user.
 
 ## Important Notes
 
