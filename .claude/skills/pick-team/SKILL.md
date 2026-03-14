@@ -118,26 +118,37 @@ For each previous round folder, check if the following files exist. If any are *
 | `sprint-qualifying.md` | `.../races/{race-id}/{race-name}/sprint-qualifying` | Sprint weekends only |
 | `sprint.md` | `.../races/{race-id}/{race-name}/sprint-results` | Sprint weekends only |
 | `prices.md` | N/A — can only come from user | Flag as missing, ask user |
+| `fantasy-points.md` | `https://fantasy.formula1.com/feeds/drivers/{gamedayId}_en.json` | After race completion (all SessionWisePoints non-null) |
 
-Use `data/2026-calendar.md` for race IDs and sprint weekend identification.
+Use `data/2026-calendar.md` for race IDs and sprint weekend identification. `{gamedayId}` = round number (1 = Australia, 2 = China, etc.).
+
+**Fantasy points backfill instructions:**
+- Fetch the JSON for each completed round
+- The feed contains both drivers (`Skill: 1`) and constructors (`Skill: 2`) in the same response
+- Save to `data/r{XX}-{race-name}/fantasy-points.md` using the format defined below
+- Key fields: `GamedayPoints` (this round), `OverallPpints` (cumulative), `Value`/`OldPlayerValue` (prices), `SelectedPercentage`/`CaptainSelectedPercentage` (ownership), `SessionWisePoints[]` (per-session breakdown), `AdditionalStats` (overtakes, DOTD, fastest lap, position pts, DNF pts, VFM)
+- Mid-round fetches show `null` for incomplete sessions — note this in the file header
+- No authentication required
 
 Also update `data/2026-standings.md` from `https://www.formula1.com/en/results/2026/drivers` and `https://www.formula1.com/en/results/2026/team`.
 
 ### 2. Assess form and trends
 
-**Driver form (last 3 races):**
-- Qualifying positions (trend: improving, stable, declining?)
-- Race finishing positions (trend)
-- Fantasy points scored per round
-- Price trajectory (rising = buy signal, falling = sell or buy-low opportunity)
-- DNF/DNS count (reliability flag)
-- Positions gained per race (overtaking ability)
+**Driver form (last 3 races) — use `fantasy-points.md` files as primary data source:**
+- `GamedayPoints` per round (actual fantasy points, not estimates)
+- `SessionWisePoints[]` breakdown (Qualifying vs Race vs Sprint contributions)
+- `AdditionalStats`: overtakes, DOTD, fastest lap, position pts — reveals hidden value
+- Price trajectory from `Value`/`OldPlayerValue` (rising = buy signal, falling = sell or buy-low)
+- `SelectedPercentage` and `CaptainSelectedPercentage` — ownership for differentiation analysis
+- DNF/DQ penalty points from `AdditionalStats.total_dnf_dq_pts` (reliability flag)
+- `AdditionalStats.total_position_gained_lost` (overtaking ability)
 
-**Constructor form (last 3 races):**
-- Combined qualifying performance (both Q3? one Q1?)
-- Combined race points and fantasy points
-- Reliability (any DNFs?)
-- Price trajectory
+**Constructor form (last 3 races) — use `fantasy-points.md` files as primary data source:**
+- `GamedayPoints` per round (actual combined fantasy points)
+- Qualifying bonus from `SessionWisePoints[]` (both Q3? one Q1?)
+- `AdditionalStats`: overtakes, pit stop bonuses, position pts
+- Reliability from `AdditionalStats.total_dnf_dq_pts`
+- Price trajectory and `SelectedPercentage` for ownership analysis
 
 **Pecking order evolution:**
 Compare current order against preseason testing, R01, and most recent round.
