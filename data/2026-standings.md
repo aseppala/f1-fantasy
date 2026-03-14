@@ -1,44 +1,44 @@
-# 2026 F1 Championship Standings
+# 2026 Championship Standings
 
-*Updated after: R01 Australian GP*
+*Updated: March 14, 2026 (after R02 China Sprint Race — race still pending)*
 
-## Driver Championship
+## Driver Standings
 
 | Pos | Driver | Team | Pts |
 |-----|--------|------|-----|
-| 1 | George Russell | Mercedes | 25 |
-| 2 | Kimi Antonelli | Mercedes | 18 |
-| 3 | Charles Leclerc | Ferrari | 15 |
-| 4 | Lewis Hamilton | Ferrari | 12 |
-| 5 | Lando Norris | McLaren | 10 |
+| 1 | George Russell | Mercedes | 33 |
+| 2 | Kimi Antonelli | Mercedes | 22 |
+| 3 | Charles Leclerc | Ferrari | 22 |
+| 4 | Lewis Hamilton | Ferrari | 18 |
+| 5 | Lando Norris | McLaren | 15 |
 | 6 | Max Verstappen | Red Bull | 8 |
-| 7 | Oliver Bearman | Haas | 6 |
+| 7 | Oliver Bearman | Haas | 7 |
 | 8 | Arvid Lindblad | Racing Bulls | 4 |
-| 9 | Gabriel Bortoleto | Audi | 2 |
-| 10 | Pierre Gasly | Alpine | 1 |
-| 11 | Esteban Ocon | Haas | 0 |
-| 12 | Alexander Albon | Williams | 0 |
-| 13 | Liam Lawson | Racing Bulls | 0 |
-| 14 | Franco Colapinto | Alpine | 0 |
-| 15 | Carlos Sainz | Williams | 0 |
-| 16 | Sergio Perez | Cadillac | 0 |
-| 17 | Lance Stroll | Aston Martin | 0 |
-| 18 | Fernando Alonso | Aston Martin | 0 |
-| 19 | Valtteri Bottas | Cadillac | 0 |
-| 20 | Isack Hadjar | Red Bull | 0 |
-| 21 | Oscar Piastri | McLaren | 0 |
-| 22 | Nico Hulkenberg | Audi | 0 |
+| 9 | Oscar Piastri | McLaren | 3 |
+| 10 | Gabriel Bortoleto | Audi | 2 |
+| 11 | Liam Lawson | Racing Bulls | 2 |
+| 12 | Pierre Gasly | Alpine | 1 |
+| 13 | Esteban Ocon | Haas | 0 |
+| 14 | Alexander Albon | Williams | 0 |
+| 15 | Franco Colapinto | Alpine | 0 |
+| 16 | Carlos Sainz | Williams | 0 |
+| 17 | Sergio Perez | Cadillac | 0 |
+| 18 | Isack Hadjar | Red Bull | 0 |
+| 19 | Nico Hulkenberg | Audi | 0 |
+| 20 | Fernando Alonso | Aston Martin | 0 |
+| 21 | Lance Stroll | Aston Martin | 0 |
+| 22 | Valtteri Bottas | Cadillac | 0 |
 
-## Constructor Championship
+## Constructor Standings
 
-| Pos | Team | Pts |
-|-----|------|-----|
-| 1 | Mercedes | 43 |
-| 2 | Ferrari | 27 |
-| 3 | McLaren | 10 |
+| Pos | Constructor | Pts |
+|-----|-------------|-----|
+| 1 | Mercedes | 55 |
+| 2 | Ferrari | 40 |
+| 3 | McLaren | 18 |
 | 4 | Red Bull | 8 |
-| 5 | Haas | 6 |
-| 6 | Racing Bulls | 4 |
+| 5 | Haas | 7 |
+| 6 | Racing Bulls | 6 |
 | 7 | Audi | 2 |
 | 8 | Alpine | 1 |
 | 9 | Williams | 0 |
