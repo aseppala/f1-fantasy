@@ -41,6 +41,7 @@ class DriverProfile:
     variance: float
     dnf_chance: float
     overtake_factor: float = 1.0
+    dotd_weight: float = 1.0  # fan popularity multiplier for DOTD voting
 
 
 @dataclass
@@ -143,7 +144,8 @@ def score_constructor(con: ConstructorProfile, driver_results: dict[str, DriverR
     return pts
 
 
-def simulate_weekend(drivers: list[DriverProfile], constructors: list[ConstructorProfile]) -> tuple[dict[str, float], dict[str, float], dict[str, DriverResult]]:
+def simulate_weekend(drivers: list[DriverProfile], constructors: list[ConstructorProfile],
+                     circuit_overtaking_index: int = 5) -> tuple[dict[str, float], dict[str, float], dict[str, DriverResult]]:
     """Run one simulated race weekend. Returns (driver_points, constructor_points, driver_results)."""
     n = len(drivers)
 
@@ -180,13 +182,15 @@ def simulate_weekend(drivers: list[DriverProfile], constructors: list[Constructo
         driver_results[name].race_pos = 0
 
     # --- Overtakes ---
+    # Scale overtake_factor by circuit overtaking index (5 = neutral, 10 = Monza, 1 = Monaco)
+    overtake_scale = circuit_overtaking_index / 5.0
     driver_map = {d.name: d for d in drivers}
     for name, r in driver_results.items():
         if r.dnf:
             continue
         gained = max(0, r.quali_pos - r.race_pos)
         r.positions_gained = gained
-        ot = max(0, round(random.gauss(gained * driver_map[name].overtake_factor, 1.5)))
+        ot = max(0, round(random.gauss(gained * driver_map[name].overtake_factor * overtake_scale, 1.5)))
         r.overtakes = ot
 
     # --- Fastest lap: weighted random among top-10 finishers ---
@@ -197,17 +201,21 @@ def simulate_weekend(drivers: list[DriverProfile], constructors: list[Constructo
         fl_winner = random.choices(top10, weights=weights, k=1)[0]
         fl_winner.fastest_lap = True
 
-    # --- DotD: weighted random favoring big movers and winner ---
+    # --- DotD: fan-voted, weighted by popularity + positions gained + podium ---
+    # dotd_weight captures fan popularity (high for Hamilton, Leclerc, Norris, Russell)
+    # positions gained 5+ creates a strong narrative hook for voters
     all_finishers = [r for r in driver_results.values() if not r.dnf]
     if all_finishers:
         dotd_weights = []
         for r in all_finishers:
-            w = max(1, r.positions_gained * 2)
+            popularity = driver_map[r.name].dotd_weight
+            positions_narrative = max(1, r.positions_gained * 2) if r.positions_gained >= 5 else max(0.5, r.positions_gained * 0.5)
+            w = popularity * positions_narrative
             if r.race_pos == 1:
-                w += 5
-            if r.race_pos <= 3:
-                w += 2
-            dotd_weights.append(w)
+                w += 5 * popularity
+            elif r.race_pos <= 3:
+                w += 2 * popularity
+            dotd_weights.append(max(0.1, w))
         dotd_winner = random.choices(all_finishers, weights=dotd_weights, k=1)[0]
         dotd_winner.dotd = True
 
@@ -225,7 +233,8 @@ def simulate_weekend(drivers: list[DriverProfile], constructors: list[Constructo
 
 
 def run_simulation(drivers: list[DriverProfile], constructors: list[ConstructorProfile],
-                   num_sims: int, teams: dict | None = None) -> None:
+                   num_sims: int, teams: dict | None = None,
+                   circuit_overtaking_index: int = 5) -> None:
     """Run Monte Carlo simulation and print results."""
 
     driver_totals: dict[str, list[float]] = {d.name: [] for d in drivers}
@@ -235,7 +244,7 @@ def run_simulation(drivers: list[DriverProfile], constructors: list[ConstructorP
     driver_map = {d.name: d for d in drivers}
 
     for _ in range(num_sims):
-        dp, cp, dr = simulate_weekend(drivers, constructors)
+        dp, cp, dr = simulate_weekend(drivers, constructors, circuit_overtaking_index)
 
         for name, pts in dp.items():
             driver_totals[name].append(pts)
@@ -312,40 +321,41 @@ def print_results(drivers, constructors, driver_totals, con_totals, team_totals,
 # --- Default profiles for Australian GP ---
 
 def get_australia_profiles() -> tuple[list[DriverProfile], list[ConstructorProfile]]:
+    # Albert Park overtaking index: 5 (neutral)
     drivers = [
         # S Tier: top teams, consistent front-runners
-        DriverProfile("Leclerc", "Ferrari", 22.8, quali_mean=3, race_mean=3, variance=2.5, dnf_chance=0.05, overtake_factor=1.0),
-        DriverProfile("Piastri", "McLaren", 25.5, quali_mean=3, race_mean=3.5, variance=2.5, dnf_chance=0.05, overtake_factor=1.1),
-        DriverProfile("Russell", "Mercedes", 27.4, quali_mean=3.5, race_mean=3, variance=2.5, dnf_chance=0.05, overtake_factor=1.0),
-        DriverProfile("Norris", "McLaren", 27.2, quali_mean=3.5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.0),
+        DriverProfile("Leclerc", "Ferrari", 22.8, quali_mean=3, race_mean=3, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.6),
+        DriverProfile("Piastri", "McLaren", 25.5, quali_mean=3, race_mean=3.5, variance=2.5, dnf_chance=0.05, overtake_factor=1.1, dotd_weight=1.5),  # home race hero
+        DriverProfile("Russell", "Mercedes", 27.4, quali_mean=3.5, race_mean=3, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.3),
+        DriverProfile("Norris", "McLaren", 27.2, quali_mean=3.5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.4),
 
         # A Tier: fast but slightly less consistent or lower pace
-        DriverProfile("Hamilton", "Ferrari", 22.5, quali_mean=5, race_mean=4.5, variance=3.0, dnf_chance=0.05, overtake_factor=1.1),
-        DriverProfile("Antonelli", "Mercedes", 23.2, quali_mean=4.5, race_mean=4.5, variance=3.0, dnf_chance=0.05, overtake_factor=1.0),
-        DriverProfile("Verstappen", "Red Bull", 27.7, quali_mean=4, race_mean=5.5, variance=3.0, dnf_chance=0.05, overtake_factor=1.2),
+        DriverProfile("Hamilton", "Ferrari", 22.5, quali_mean=5, race_mean=4.5, variance=3.0, dnf_chance=0.05, overtake_factor=1.1, dotd_weight=1.8),
+        DriverProfile("Antonelli", "Mercedes", 23.2, quali_mean=4.5, race_mean=4.5, variance=3.0, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.2),
+        DriverProfile("Verstappen", "Red Bull", 27.7, quali_mean=4, race_mean=5.5, variance=3.0, dnf_chance=0.05, overtake_factor=1.2, dotd_weight=1.0),
 
         # B+ Tier
-        DriverProfile("Hadjar", "Red Bull", 15.1, quali_mean=8, race_mean=8, variance=3.0, dnf_chance=0.07, overtake_factor=1.0),
+        DriverProfile("Hadjar", "Red Bull", 15.1, quali_mean=8, race_mean=8, variance=3.0, dnf_chance=0.07, overtake_factor=1.0, dotd_weight=1.0),
 
         # B Tier: midfield with potential
-        DriverProfile("Bearman", "Haas", 7.4, quali_mean=12, race_mean=11, variance=3.5, dnf_chance=0.08, overtake_factor=1.3),
-        DriverProfile("Ocon", "Haas", 7.3, quali_mean=11, race_mean=12, variance=3.5, dnf_chance=0.08, overtake_factor=1.1),
-        DriverProfile("Lindblad", "Racing Bulls", 5.5, quali_mean=13, race_mean=13, variance=3.5, dnf_chance=0.08, overtake_factor=1.0),
-        DriverProfile("Lawson", "Racing Bulls", 6.5, quali_mean=14, race_mean=14, variance=3.5, dnf_chance=0.08, overtake_factor=1.0),
+        DriverProfile("Bearman", "Haas", 7.4, quali_mean=12, race_mean=11, variance=3.5, dnf_chance=0.08, overtake_factor=1.3, dotd_weight=1.2),
+        DriverProfile("Ocon", "Haas", 7.3, quali_mean=11, race_mean=12, variance=3.5, dnf_chance=0.08, overtake_factor=1.1, dotd_weight=1.0),
+        DriverProfile("Lindblad", "Racing Bulls", 5.5, quali_mean=13, race_mean=13, variance=3.5, dnf_chance=0.08, overtake_factor=1.0, dotd_weight=1.0),
+        DriverProfile("Lawson", "Racing Bulls", 6.5, quali_mean=14, race_mean=14, variance=3.5, dnf_chance=0.08, overtake_factor=1.0, dotd_weight=1.0),
 
         # C Tier: lower midfield
-        DriverProfile("Gasly", "Alpine", 9.0, quali_mean=14, race_mean=14, variance=3.5, dnf_chance=0.08, overtake_factor=1.0),
-        DriverProfile("Hulkenberg", "Audi", 8.0, quali_mean=13, race_mean=13, variance=3.5, dnf_chance=0.08, overtake_factor=0.9),
-        DriverProfile("Sainz", "Williams", 12.0, quali_mean=13, race_mean=12, variance=3.5, dnf_chance=0.08, overtake_factor=1.0),
-        DriverProfile("Albon", "Williams", 10.0, quali_mean=15, race_mean=15, variance=3.5, dnf_chance=0.08, overtake_factor=1.0),
-        DriverProfile("Colapinto", "Alpine", 6.5, quali_mean=16, race_mean=16, variance=3.5, dnf_chance=0.08, overtake_factor=0.9),
-        DriverProfile("Bortoleto", "Audi", 6.5, quali_mean=15, race_mean=15, variance=3.5, dnf_chance=0.08, overtake_factor=0.9),
+        DriverProfile("Gasly", "Alpine", 9.0, quali_mean=14, race_mean=14, variance=3.5, dnf_chance=0.08, overtake_factor=1.0, dotd_weight=1.0),
+        DriverProfile("Hulkenberg", "Audi", 8.0, quali_mean=13, race_mean=13, variance=3.5, dnf_chance=0.08, overtake_factor=0.9, dotd_weight=1.0),
+        DriverProfile("Sainz", "Williams", 12.0, quali_mean=13, race_mean=12, variance=3.5, dnf_chance=0.08, overtake_factor=1.0, dotd_weight=1.1),
+        DriverProfile("Albon", "Williams", 10.0, quali_mean=15, race_mean=15, variance=3.5, dnf_chance=0.08, overtake_factor=1.0, dotd_weight=1.0),
+        DriverProfile("Colapinto", "Alpine", 6.5, quali_mean=16, race_mean=16, variance=3.5, dnf_chance=0.08, overtake_factor=0.9, dotd_weight=1.0),
+        DriverProfile("Bortoleto", "Audi", 6.5, quali_mean=15, race_mean=15, variance=3.5, dnf_chance=0.08, overtake_factor=0.9, dotd_weight=1.0),
 
         # D Tier: backmarkers
-        DriverProfile("Alonso", "Aston Martin", 10.0, quali_mean=18, race_mean=18, variance=3.0, dnf_chance=0.12, overtake_factor=1.0),
-        DriverProfile("Stroll", "Aston Martin", 8.0, quali_mean=19, race_mean=19, variance=3.0, dnf_chance=0.12, overtake_factor=0.8),
-        DriverProfile("Bottas", "Cadillac", 5.9, quali_mean=20, race_mean=20, variance=3.0, dnf_chance=0.12, overtake_factor=0.8),
-        DriverProfile("Perez", "Cadillac", 6.0, quali_mean=21, race_mean=21, variance=3.0, dnf_chance=0.12, overtake_factor=0.8),
+        DriverProfile("Alonso", "Aston Martin", 10.0, quali_mean=18, race_mean=18, variance=3.0, dnf_chance=0.12, overtake_factor=1.0, dotd_weight=1.2),
+        DriverProfile("Stroll", "Aston Martin", 8.0, quali_mean=19, race_mean=19, variance=3.0, dnf_chance=0.12, overtake_factor=0.8, dotd_weight=0.8),
+        DriverProfile("Bottas", "Cadillac", 5.9, quali_mean=20, race_mean=20, variance=3.0, dnf_chance=0.12, overtake_factor=0.8, dotd_weight=0.9),
+        DriverProfile("Perez", "Cadillac", 6.0, quali_mean=21, race_mean=21, variance=3.0, dnf_chance=0.12, overtake_factor=0.8, dotd_weight=0.9),
     ]
 
     constructors = [
@@ -394,38 +404,39 @@ def get_default_teams() -> dict:
 
 def get_china_profiles() -> tuple[list[DriverProfile], list[ConstructorProfile]]:
     """Profiles for Chinese GP based on R01 results + FP1 + Sprint Qualifying."""
+    # Shanghai overtaking index: 6 (above neutral, good DRS zones)
     drivers = [
         # S Tier: Mercedes dominant (1-2 in R01, 1-2 FP1, 1-2 SQ)
-        DriverProfile("Russell", "Mercedes", 27.7, quali_mean=1.5, race_mean=1.5, variance=1.5, dnf_chance=0.04, overtake_factor=1.0),
-        DriverProfile("Antonelli", "Mercedes", 23.5, quali_mean=2.5, race_mean=2.5, variance=2.0, dnf_chance=0.06, overtake_factor=1.0),
+        DriverProfile("Russell", "Mercedes", 27.7, quali_mean=1.5, race_mean=1.5, variance=1.5, dnf_chance=0.04, overtake_factor=1.0, dotd_weight=1.3),
+        DriverProfile("Antonelli", "Mercedes", 23.5, quali_mean=2.5, race_mean=2.5, variance=2.0, dnf_chance=0.06, overtake_factor=1.0, dotd_weight=1.2),
 
         # A Tier: McLaren + Ferrari fighting for P3-P6
-        DriverProfile("Norris", "McLaren", 27.2, quali_mean=3.5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.0),
-        DriverProfile("Hamilton", "Ferrari", 22.6, quali_mean=4.5, race_mean=4.5, variance=2.5, dnf_chance=0.05, overtake_factor=1.1),
-        DriverProfile("Piastri", "McLaren", 25.2, quali_mean=5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.1),
-        DriverProfile("Leclerc", "Ferrari", 23.1, quali_mean=5.5, race_mean=5, variance=2.5, dnf_chance=0.05, overtake_factor=1.0),
+        DriverProfile("Norris", "McLaren", 27.2, quali_mean=3.5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.4),
+        DriverProfile("Hamilton", "Ferrari", 22.6, quali_mean=4.5, race_mean=4.5, variance=2.5, dnf_chance=0.05, overtake_factor=1.1, dotd_weight=1.8),
+        DriverProfile("Piastri", "McLaren", 25.2, quali_mean=5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.1, dotd_weight=1.1),
+        DriverProfile("Leclerc", "Ferrari", 23.1, quali_mean=5.5, race_mean=5, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.6),
 
         # B Tier: Gasly surprise P7 in SQ, Verstappen P8
-        DriverProfile("Gasly", "Alpine", 12.2, quali_mean=8, race_mean=9, variance=3.5, dnf_chance=0.07, overtake_factor=1.0),
-        DriverProfile("Verstappen", "Red Bull", 28.0, quali_mean=7, race_mean=7, variance=3.0, dnf_chance=0.05, overtake_factor=1.3),
+        DriverProfile("Gasly", "Alpine", 12.2, quali_mean=8, race_mean=9, variance=3.5, dnf_chance=0.07, overtake_factor=1.0, dotd_weight=1.0),
+        DriverProfile("Verstappen", "Red Bull", 28.0, quali_mean=7, race_mean=7, variance=3.0, dnf_chance=0.05, overtake_factor=1.3, dotd_weight=1.0),
 
         # C Tier: midfield (SQ P9-P16)
-        DriverProfile("Bearman", "Haas", 8.0, quali_mean=10, race_mean=9, variance=3.0, dnf_chance=0.07, overtake_factor=1.3),
-        DriverProfile("Hadjar", "Red Bull", 14.5, quali_mean=10, race_mean=10, variance=3.5, dnf_chance=0.08, overtake_factor=1.0),
-        DriverProfile("Hulkenberg", "Audi", 8.0, quali_mean=11, race_mean=12, variance=3.5, dnf_chance=0.07, overtake_factor=0.9),
-        DriverProfile("Ocon", "Haas", 7.3, quali_mean=12, race_mean=11, variance=3.5, dnf_chance=0.07, overtake_factor=1.1),
-        DriverProfile("Lawson", "Racing Bulls", 6.5, quali_mean=13, race_mean=13, variance=3.5, dnf_chance=0.07, overtake_factor=1.0),
-        DriverProfile("Bortoleto", "Audi", 7.0, quali_mean=14, race_mean=14, variance=3.5, dnf_chance=0.07, overtake_factor=0.9),
-        DriverProfile("Lindblad", "Racing Bulls", 6.1, quali_mean=15, race_mean=15, variance=3.5, dnf_chance=0.08, overtake_factor=1.0),
-        DriverProfile("Colapinto", "Alpine", 6.4, quali_mean=16, race_mean=16, variance=3.5, dnf_chance=0.07, overtake_factor=0.9),
+        DriverProfile("Bearman", "Haas", 8.0, quali_mean=10, race_mean=9, variance=3.0, dnf_chance=0.07, overtake_factor=1.3, dotd_weight=1.2),
+        DriverProfile("Hadjar", "Red Bull", 14.5, quali_mean=10, race_mean=10, variance=3.5, dnf_chance=0.08, overtake_factor=1.0, dotd_weight=1.0),
+        DriverProfile("Hulkenberg", "Audi", 8.0, quali_mean=11, race_mean=12, variance=3.5, dnf_chance=0.07, overtake_factor=0.9, dotd_weight=1.0),
+        DriverProfile("Ocon", "Haas", 7.3, quali_mean=12, race_mean=11, variance=3.5, dnf_chance=0.07, overtake_factor=1.1, dotd_weight=1.0),
+        DriverProfile("Lawson", "Racing Bulls", 6.5, quali_mean=13, race_mean=13, variance=3.5, dnf_chance=0.07, overtake_factor=1.0, dotd_weight=1.0),
+        DriverProfile("Bortoleto", "Audi", 7.0, quali_mean=14, race_mean=14, variance=3.5, dnf_chance=0.07, overtake_factor=0.9, dotd_weight=1.0),
+        DriverProfile("Lindblad", "Racing Bulls", 6.1, quali_mean=15, race_mean=15, variance=3.5, dnf_chance=0.08, overtake_factor=1.0, dotd_weight=1.0),
+        DriverProfile("Colapinto", "Alpine", 6.4, quali_mean=16, race_mean=16, variance=3.5, dnf_chance=0.07, overtake_factor=0.9, dotd_weight=1.0),
 
         # D Tier: backmarkers (SQ P17+)
-        DriverProfile("Sainz", "Williams", 12.0, quali_mean=17, race_mean=16, variance=3.5, dnf_chance=0.08, overtake_factor=1.0),
-        DriverProfile("Albon", "Williams", 10.0, quali_mean=18, race_mean=17, variance=3.5, dnf_chance=0.07, overtake_factor=1.0),
-        DriverProfile("Alonso", "Aston Martin", 10.0, quali_mean=19, race_mean=18, variance=3.0, dnf_chance=0.12, overtake_factor=1.0),
-        DriverProfile("Stroll", "Aston Martin", 8.0, quali_mean=20, race_mean=20, variance=3.0, dnf_chance=0.12, overtake_factor=0.8),
-        DriverProfile("Bottas", "Cadillac", 5.3, quali_mean=21, race_mean=21, variance=3.0, dnf_chance=0.10, overtake_factor=0.8),
-        DriverProfile("Perez", "Cadillac", 6.0, quali_mean=22, race_mean=22, variance=3.0, dnf_chance=0.10, overtake_factor=0.8),
+        DriverProfile("Sainz", "Williams", 12.0, quali_mean=17, race_mean=16, variance=3.5, dnf_chance=0.08, overtake_factor=1.0, dotd_weight=1.1),
+        DriverProfile("Albon", "Williams", 10.0, quali_mean=18, race_mean=17, variance=3.5, dnf_chance=0.07, overtake_factor=1.0, dotd_weight=1.0),
+        DriverProfile("Alonso", "Aston Martin", 10.0, quali_mean=19, race_mean=18, variance=3.0, dnf_chance=0.12, overtake_factor=1.0, dotd_weight=1.2),
+        DriverProfile("Stroll", "Aston Martin", 8.0, quali_mean=20, race_mean=20, variance=3.0, dnf_chance=0.12, overtake_factor=0.8, dotd_weight=0.8),
+        DriverProfile("Bottas", "Cadillac", 5.3, quali_mean=21, race_mean=21, variance=3.0, dnf_chance=0.10, overtake_factor=0.8, dotd_weight=0.9),
+        DriverProfile("Perez", "Cadillac", 6.0, quali_mean=22, race_mean=22, variance=3.0, dnf_chance=0.10, overtake_factor=0.8, dotd_weight=0.9),
     ]
 
     constructors = [
@@ -508,6 +519,8 @@ def parse_args():
     parser.add_argument("--seed", type=int, help="Random seed for reproducibility")
     parser.add_argument("--race", type=str, default="australia", choices=["australia", "china"],
                         help="Race weekend profiles to use (default: australia)")
+    parser.add_argument("--overtaking-index", type=int, default=None,
+                        help="Circuit overtaking index 1-10 (overrides race default; 1=Monaco, 10=Monza, 5=neutral)")
     return parser.parse_args()
 
 
@@ -520,9 +533,13 @@ def main():
     if args.race == "china":
         drivers, constructors = get_china_profiles()
         teams = get_china_teams()
+        default_overtaking_index = 6
     else:
         drivers, constructors = get_australia_profiles()
         teams = get_default_teams()
+        default_overtaking_index = 5
+
+    circuit_overtaking_index = args.overtaking_index if args.overtaking_index is not None else default_overtaking_index
 
     # Add custom team if specified
     if args.team:
@@ -540,7 +557,8 @@ def main():
     show_teams = not args.drivers_only and not args.constructors_only
 
     driver_totals, con_totals, team_totals, driver_map = run_simulation(
-        drivers, constructors, args.sims, teams if show_teams else None
+        drivers, constructors, args.sims, teams if show_teams else None,
+        circuit_overtaking_index=circuit_overtaking_index
     )
 
     print_results(
