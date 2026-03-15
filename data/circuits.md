@@ -23,10 +23,11 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
 | 2024 | Sainz | Ferrari |
-| 2025 | Piastri | McLaren |
+| 2025 | Norris | McLaren |
 
-**Circuit Kings:** Verstappen (2× wins), Leclerc (2× pole), Piastri (home race hero)
-**DOTD Profile:** Home crowd advantage — Australian drivers (Piastri, Ricciardo-era) get heavy support. Big movers from back rows rewarded. SC restarts create overtaking narrative.
+**DOTD History:** 2023 Perez, 2024 Sainz, 2025 Norris
+**Circuit Kings:** No repeat winner 2023–2025; Verstappen won 2022+2023 (2×); Norris (2025)
+**DOTD Profile:** Race winner consistently gets DOTD (Sainz 2024, Norris 2025). Piastri as Australian home race hero still has strong narrative pull even without a win. SC restarts create overtaking moments that earn votes from back-of-grid chargers. No consistent home driver bias since Ricciardo era.
 
 ---
 
@@ -45,10 +46,11 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 |------|--------|-------------|
 | 2023 | No race (COVID absence 2020–2023) | — |
 | 2024 | Verstappen | Red Bull |
-| 2025 | Norris | McLaren |
+| 2025 | Piastri | McLaren |
 
-**Circuit Kings:** Verstappen (dominant in long-stint race pace), Hamilton (historic China form), Norris (2025 winner)
-**DOTD Profile:** Global fan vote — popularity dominates. Hamilton and Norris historically strong DOTD candidates. Winner frequently gets it. Long back straight creates overtaking narratives.
+**DOTD History:** 2024 Norris, 2025 unknown
+**Circuit Kings:** Verstappen (2024 dominant), Piastri (2025 winner), McLaren (2× wins 2024–2025)
+**DOTD Profile:** Global fan vote — popularity dominates. Hamilton and Norris historically strong DOTD candidates here. Norris won DOTD in 2024 despite Verstappen winning the race — clear signal that popular drivers override the winner. Long back straight creates overtaking narratives.
 
 ---
 
@@ -69,8 +71,9 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 | 2024 | Verstappen | Red Bull |
 | 2025 | Verstappen | Red Bull |
 
-**Circuit Kings:** Verstappen (3× consecutive wins), Hamilton (4× Suzuka wins historically), Senna (legend)
-**DOTD Profile:** Japanese fans vote heavily for Verstappen when he wins dominantly. If someone makes a bold overtake at Spoon or 130R, that narrative wins. Low overtaking means DOTD often goes to winner or a dramatic charger.
+**DOTD History:** 2023 Piastri, 2024 Leclerc, 2025 Tsunoda
+**Circuit Kings:** Verstappen (3× consecutive wins — undisputed Suzuka king), Hamilton (4× historic wins)
+**DOTD Profile:** **Tsunoda home race hero confirmed in 2025** — Japanese fans voted heavily for him as local hero. This is a strong signal: give Tsunoda elevated DOTD weight at Suzuka. Leclerc got it in 2024 as global fan favorite. Low overtaking means DOTD goes to winner or a bold charger through Spoon/130R.
 
 ---
 
@@ -89,10 +92,11 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
 | 2024 | Verstappen | Red Bull |
-| 2025 | Hamilton | Ferrari |
+| 2025 | Piastri | McLaren |
 
-**Circuit Kings:** Verstappen (dominant 2022–2024), Hamilton (2025, Bahrain season-opener history), Leclerc (2022 pole/win)
-**DOTD Profile:** Tire management narrative. A driver who manages tires brilliantly or makes bold 1-stop work wins votes. Night race + TV audience skews global popularity vote.
+**DOTD History:** 2023 Alonso, 2024 Sainz, 2025 Hamilton
+**Circuit Kings:** Verstappen (dominant 2022–2024), Piastri (2025), Hamilton (Bahrain season-opener history)
+**DOTD Profile:** **Non-race-winner consistently gets DOTD at Bahrain** — Alonso, Sainz, and Hamilton all won DOTD without winning the race. Tire management narrative and night race global audience drive votes toward fan-favorites who have strong drives, not just race winners. Strong signal to weight popular drivers regardless of finishing position.
 
 ---
 
@@ -109,12 +113,13 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 **Historical Winners (2023–2025)**
 | Year | Winner | Constructor |
 |------|--------|-------------|
-| 2023 | Verstappen | Red Bull |
+| 2023 | Perez | Red Bull |
 | 2024 | Verstappen | Red Bull |
-| 2025 | Norris | McLaren |
+| 2025 | Piastri | McLaren |
 
-**Circuit Kings:** Verstappen (2× wins), Hamilton (2× wins 2021), Lewis-class street circuit pace
-**DOTD Profile:** SC restarts on this circuit create dramatic moments. The driver who benefits most from restart chaos (typically midfield hero or overcut winner) gets DOTD. Night race global audience → popularity counts.
+**DOTD History:** 2023 Verstappen (despite Perez winning — popularity vote), 2024 Bearman (F1 debut), 2025 Verstappen
+**Circuit Kings:** Verstappen (2× wins 2023–2024 with Perez also winning 2023), Piastri (2025)
+**DOTD Profile:** **Narrative beats performance at Jeddah.** Bearman's 2024 DOTD for his F1 debut replacing Sainz at Ferrari was the biggest story of the weekend — confirms narrative trump card. SC restarts create position-gain heroes. Night race global audience → popularity counts alongside story.
 
 ---
 
@@ -133,10 +138,11 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
 | 2024 | Norris | McLaren |
-| 2025 | Verstappen | Red Bull |
+| 2025 | Piastri | McLaren |
 
-**Circuit Kings:** Verstappen (2× wins), Norris (2024 dominant win)
-**DOTD Profile:** American audience + Sprint weekend = entertainment-first voting. Popular drivers (Hamilton, Leclerc, Norris) do well. Sprint race DOTD separate event adds complexity.
+**DOTD History:** 2023 Verstappen, 2024 Norris, 2025 Piastri
+**Circuit Kings:** McLaren (2× wins 2024–2025), Verstappen (2023)
+**DOTD Profile:** **Race winner consistently wins DOTD at Miami** — all 3 years the race winner got the vote (Verstappen, Norris, Piastri). American entertainment audience aligns with result here. Popular entertainment vote tracks race outcome. McLaren emerging as circuit kings.
 
 ---
 
@@ -155,10 +161,11 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
 | 2024 | Verstappen | Red Bull |
-| 2025 | Leclerc | Ferrari |
+| 2025 | Russell | Mercedes |
 
-**Circuit Kings:** Hamilton (7× wins in Montreal), Verstappen (2× recent wins), Alonso (3× wins historically)
-**DOTD Profile:** SC creates massive position shuffles. Drivers who gain 5+ places after SC restart win votes. Hamilton home-crowd equivalent — North American fans strong. Hamilton or Leclerc in top narrative moments usually wins.
+**DOTD History:** 2023 Albon (!), 2024 Norris, 2025 Antonelli
+**Circuit Kings:** Hamilton (7× wins in Montreal), Verstappen (2× recent wins), Russell (2025)
+**DOTD Profile:** **Strong underdog/surprise performer pattern** — Albon (Williams) won DOTD in 2023, Antonelli (rookie) won in 2025. Canada rewards narrative drives rather than just popularity. SC creates position-gain moments. Hamilton narrative historically very strong but DOTD went to others in recent years — not guaranteed here.
 
 ---
 
@@ -177,10 +184,11 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
 | 2024 | Leclerc | Ferrari |
-| 2025 | Leclerc | Ferrari |
+| 2025 | Norris | McLaren |
 
-**Circuit Kings:** Leclerc (2× consecutive wins, finally won home race), Senna (6× wins), Hamilton (3× wins)
-**DOTD Profile:** **Leclerc bias** — Monaco is his home race, tifosi + local fans vote heavily. If Hamilton or Alonso does something dramatic, they challenge. Winner almost always wins DOTD at Monaco. Overtaking irrelevant — narrative and popularity dominate.
+**DOTD History:** 2023 Ocon, 2024 Leclerc, 2025 unknown
+**Circuit Kings:** Leclerc (2024 home race win), Senna (6× wins), Hamilton (3× wins), Norris (2025)
+**DOTD Profile:** **Leclerc bias applies when he wins** — Monaco is his home race and the 2024 win + DOTD was a clear home-race combo. But Ocon winning DOTD in 2023 (midfield narrative at Monaco) shows it's not iron-clad. Norris won 2025 but DOTD unknown. Winner-gets-DOTD pattern holds at Monaco when a popular driver wins; midfield storylines can override when the winner is less beloved.
 
 ---
 
@@ -199,10 +207,11 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
 | 2024 | Verstappen | Red Bull |
-| 2025 | Hamilton | Ferrari |
+| 2025 | Piastri | McLaren |
 
-**Circuit Kings:** Hamilton (6× wins, owns Barcelona), Verstappen (2× recent), Schumacher (6× wins historically)
-**DOTD Profile:** Limited overtaking means DOTD goes to narratively compelling drives. Hamilton in Ferrari gets massive vote if he performs. Spanish crowd cheers local Carlos Sainz. Dominant winner often takes it.
+**DOTD History:** 2023 Hamilton, 2024 Norris, 2025 Verstappen
+**Circuit Kings:** Hamilton (6× wins, owns Barcelona), Verstappen (2× recent wins), Piastri (2025)
+**DOTD Profile:** **No race winner won DOTD in any of the 3 years** (Hamilton didn't win 2023, Norris didn't win 2024, Verstappen didn't win 2025). Classic global popularity vote — popular drivers who performed well get DOTD regardless of winning. Strong signal to weight fan favorites independently of race result.
 
 ---
 
@@ -220,11 +229,12 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 | Year | Winner | Constructor |
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
-| 2024 | Verstappen | Red Bull |
+| 2024 | Russell | Mercedes |
 | 2025 | Norris | McLaren |
 
-**Circuit Kings:** Verstappen (home race, 4× wins), Norris (strong 2024/2025 form)
-**DOTD Profile:** Verstappen home race — Dutch Orange Army travels. If Verstappen competes, he gets heavy DOTD votes even without winning. Sprint-style short circuit means dramatic overtakes get noticed.
+**DOTD History:** 2023 Norris, 2024 Norris, 2025 Bortoleto
+**Circuit Kings:** Verstappen (3× historical wins), Norris (2025 winner + 2× DOTD), Russell (2024 — Verstappen/Norris collision)
+**DOTD Profile:** **Norris dominated DOTD here** in 2023 and 2024 despite not winning either year — very strong signal for Norris regardless of result. 2025 gave Bortoleto (new driver narrative). While Dutch Orange Army travels, their voting doesn't overwhelm here the way it does at Zandvoort.
 
 ---
 
@@ -241,12 +251,13 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 **Historical Winners (2023–2025)**
 | Year | Winner | Constructor |
 |------|--------|-------------|
-| 2023 | Hamilton | Mercedes |
+| 2023 | Verstappen | Red Bull |
 | 2024 | Hamilton | Mercedes |
 | 2025 | Norris | McLaren |
 
-**Circuit Kings:** **Hamilton** (8× wins — most in circuit history), Norris (home crowd favorite since 2025), Leclerc (pole threat)
-**DOTD Profile:** **British driver bias** — British Grand Prix crowd votes overwhelmingly for Hamilton, Norris, or Russell if they perform. If all three race well, vote splits between them. Sprint weekend adds a second DOTD event.
+**DOTD History:** 2023 Norris, 2024 Hamilton, 2025 Hulkenberg
+**Circuit Kings:** **Hamilton** (8× wins — most in circuit history), Norris (2025 winner + 2023 DOTD home hero)
+**DOTD Profile:** **British driver bias confirmed but not guaranteed** — Norris got DOTD in 2023 (didn't win), Hamilton won in 2024 and got DOTD. But **Hulkenberg got DOTD in 2025** — crowd rewarded a surprise midfield drive over the home favorites. Sprint weekend adds a second DOTD event. British home crowd factors in but doesn't override a compelling underdog narrative.
 
 ---
 
@@ -267,8 +278,9 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 | 2024 | Hamilton | Mercedes |
 | 2025 | Piastri | McLaren |
 
+**DOTD History:** 2023 Verstappen, 2024 Hamilton (race winner), 2025 unknown
 **Circuit Kings:** Verstappen (3× recent wins), Hamilton (Spa master), Schumacher (6× wins historically)
-**DOTD Profile:** Eau Rouge/Raidillon drama = big DOTD moments. Weather chaos creates heroes from the back. Piastri's dominant drives earn votes. If Hamilton or Leclerc charge through from penalized grid position (common at Spa), they win DOTD.
+**DOTD Profile:** Race winner got DOTD in 2023 and 2024 — no surprising overrides in the data. Eau Rouge/Raidillon drama creates big moments; weather chaos creates heroes from the back. If Hamilton or Leclerc charge from a penalized grid position (common at Spa), they challenge for DOTD.
 
 ---
 
@@ -285,12 +297,13 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 **Historical Winners (2023–2025)**
 | Year | Winner | Constructor |
 |------|--------|-------------|
-| 2023 | Hamilton | Mercedes |
+| 2023 | Verstappen | Red Bull |
 | 2024 | Piastri | McLaren |
 | 2025 | Norris | McLaren |
 
-**Circuit Kings:** Hamilton (8× wins historically), Piastri (2024 dominant), Norris (strong tire management)
-**DOTD Profile:** Near-zero overtaking means narrative storytelling wins DOTD. Hamilton performing brilliantly in Hungary always earns votes (legacy circuit). Winner usually wins DOTD. Popularity heavily weighted.
+**DOTD History:** 2023 Perez, 2024 Piastri (race winner), 2025 Bortoleto
+**Circuit Kings:** Hamilton (8× wins historically), Piastri (2024 dominant), Norris (2025)
+**DOTD Profile:** Near-zero overtaking means narrative storytelling wins DOTD. Winner gets DOTD in 2024 (Piastri), but in 2023 Perez got it despite not winning. **Bortoleto won DOTD in 2025 as a rookie** — confirms "new driver narrative" is circuit-agnostic. Hamilton legacy circuit but DOTD went to others in recent years.
 
 ---
 
@@ -309,10 +322,11 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
 | 2024 | Norris | McLaren |
-| 2025 | Verstappen | Red Bull |
+| 2025 | Piastri | McLaren |
 
-**Circuit Kings:** Verstappen (home race, 3× wins), Norris (2024 win)
-**DOTD Profile:** **Verstappen home race** — Dutch Orange Army dominates voting regardless of result. If Verstappen even finishes P3 with a strong comeback, he wins DOTD. Very hard to overcome home crowd advantage here. Sprint adds second DOTD.
+**DOTD History:** 2023 Alonso (!), 2024 Norris (race winner), 2025 Hadjar
+**Circuit Kings:** Verstappen (2023 wins), McLaren/Norris+Piastri (2× wins 2024–2025)
+**DOTD Profile:** **The "Verstappen home race dominates DOTD" assumption is WRONG.** Alonso won DOTD in 2023 when Verstappen won the race — Dutch fans may not participate heavily in online voting. Hadjar won in 2025 as a breakout rookie. DOTD here follows global popularity vote or compelling narrative, not the home driver. Sprint adds a second DOTD.
 
 ---
 
@@ -331,10 +345,11 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
 | 2024 | Leclerc | Ferrari |
-| 2025 | Norris | McLaren |
+| 2025 | Verstappen | Red Bull |
 
-**Circuit Kings:** Leclerc (2019, 2024 wins, home-ish race for Ferrari), Hamilton (5× wins), Verstappen
-**DOTD Profile:** **Tifosi + Italian passion** — if any Ferrari driver (Leclerc, Hamilton) performs well at Monza, the Tifosi vote machine activates. Leclerc's 2024 win had him dominate DOTD. Verstappen wins here but his DOTD vote is lower; Italian crowd votes Ferrari.
+**DOTD History:** 2023 Sainz (DOTD despite not winning — tifosi voted Ferrari), 2024 Leclerc (race winner), 2025 unknown
+**Circuit Kings:** Leclerc (2024 tifosi victory), Hamilton (5× wins historically), Verstappen (2× wins)
+**DOTD Profile:** **Tifosi voting pattern confirmed** — Sainz won DOTD in 2023 even without winning the race, purely through Ferrari fan support. Leclerc winning and getting DOTD in 2024 is the ultimate Monza outcome. **If any Ferrari driver performs well at Monza, they win DOTD regardless of race result** — the tifosi vote machine activates.
 
 ---
 
@@ -365,12 +380,13 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 **Historical Winners (2023–2025)**
 | Year | Winner | Constructor |
 |------|--------|-------------|
-| 2023 | Leclerc | Ferrari |
+| 2023 | Perez | Red Bull |
 | 2024 | Piastri | McLaren |
-| 2025 | Sainz | Williams |
+| 2025 | Verstappen | Red Bull |
 
-**Circuit Kings:** Leclerc (2× wins, consistent Baku performer), Sainz (2025 winner), Sergio Perez (3× Baku wins 2021–2023)
-**DOTD Profile:** Baku chaos creates massive position shuffles. SC restarts create heroes from the back. Leclerc fan base votes heavily when he has a strong Baku race. Anyone who gains 10+ places after a late SC restart wins DOTD.
+**DOTD History:** 2023 Perez (race winner), 2024 Piastri (race winner), 2025 Sainz
+**Circuit Kings:** Perez (2023 + historically 2021–2022), Piastri (2024), Verstappen (2025)
+**DOTD Profile:** Race winner got DOTD in 2023 (Perez) and 2024 (Piastri). **Sainz got DOTD in 2025 despite Verstappen winning** — lingering fan affection from his Ferrari era. Baku chaos creates massive position shuffles; SC restarts create heroes from the back. No recent Leclerc win at Baku — remove that as a DOTD signal.
 
 ---
 
@@ -389,10 +405,11 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 |------|--------|-------------|
 | 2023 | Sainz | Ferrari |
 | 2024 | Norris | McLaren |
-| 2025 | TBD | TBD |
+| 2025 | Russell | Mercedes |
 
-**Circuit Kings:** Hamilton (4× wins), Vettel (5× wins historically), Sainz (2023 Singapore master), Norris (2024)
-**DOTD Profile:** Night race + massive TV audience = popularity vote dominates. Hamilton's historic Singapore mastery earns votes. SC restarts create heroes. Sprint weekend adds DOTD complexity. Very low overtaking means DOTD narrative goes to dramatic qualifying/race-long management story.
+**DOTD History:** 2023 Sainz (race winner), 2024 Ricciardo (pure fan vote — returning hero), 2025 Alonso (veteran fan favorite)
+**Circuit Kings:** Hamilton (4× wins historically), Sainz (2023), Norris (2024), Russell (2025)
+**DOTD Profile:** **Most unpredictable DOTD on the calendar.** Ricciardo got DOTD despite Norris winning in 2024; Alonso got DOTD despite Russell winning in 2025. Pure popularity vote with zero correlation to race result. Crowd rewards charismatic veterans regardless of finishing position. Night race + massive TV audience amplifies this effect.
 
 ---
 
@@ -409,12 +426,13 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 **Historical Winners (2023–2025)**
 | Year | Winner | Constructor |
 |------|--------|-------------|
-| 2023 | Leclerc | Ferrari |
+| 2023 | Verstappen | Red Bull |
 | 2024 | Leclerc | Ferrari |
-| 2025 | TBD | TBD |
+| 2025 | Verstappen | Red Bull |
 
-**Circuit Kings:** Hamilton (6× COTA wins historically), **Leclerc** (2× consecutive 2023–2024), Verstappen
-**DOTD Profile:** American audience loves spectacle — big overtakes at Turn 1 or down the back straight win votes. Leclerc's COTA mastery earns fan votes. Hamilton narrative always strong in USA.
+**DOTD History:** 2023 Norris, 2024 Leclerc (race winner), 2025 Leclerc (despite Verstappen winning!)
+**Circuit Kings:** Hamilton (6× COTA wins historically), **Leclerc** (2024 win + 2× DOTD including when he didn't win), Verstappen (2× wins)
+**DOTD Profile:** **Leclerc is the COTA DOTD king** — won it in 2024 (winning the race) and 2025 (when Verstappen won). American F1 fans particularly love Leclerc. Very strong signal for Leclerc at COTA regardless of race result. Note: Leclerc was DSQ'd from 2023 after initially finishing P2; Verstappen won that race.
 
 ---
 
@@ -432,11 +450,12 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 | Year | Winner | Constructor |
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
-| 2024 | Verstappen | Red Bull |
-| 2025 | TBD | TBD |
+| 2024 | Sainz | Ferrari |
+| 2025 | Norris | McLaren |
 
-**Circuit Kings:** Verstappen (3× recent wins), Hamilton (3× wins), Bottas (2× wins historically)
-**DOTD Profile:** Local Mexican crowd + anti-stadium seating = huge atmosphere. If any driver battles from the back in the stadium section, big DOTD votes. Popularity dominates in this global night-time audience race.
+**DOTD History:** 2023 Norris, 2024 Sainz (race winner), 2025 Bearman
+**Circuit Kings:** Verstappen (2022–2023 dominance), Sainz (2024)
+**DOTD Profile:** **Bearman won DOTD in 2025** despite Norris winning — narrative of a young driver performing above expectations. Popular drivers (Norris) don't always win here. Local Mexican crowd + stadium seating creates a huge atmosphere that rewards dramatic racing moments.
 
 ---
 
@@ -454,11 +473,12 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 | Year | Winner | Constructor |
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
-| 2024 | Norris | McLaren |
-| 2025 | TBD | TBD |
+| 2024 | Verstappen | Red Bull |
+| 2025 | Norris | McLaren |
 
-**Circuit Kings:** Hamilton (Brazil maestro, 2021 charge from P5 to win), Norris (2024 dominant), Senna legacy circuit
-**DOTD Profile:** **Rain + Hamilton** = DOTD machine. Brazil is where Hamilton's greatest drives happened (2021). If rain falls, a big-charger narrative emerges and Hamilton/Leclerc/Norris popular drivers win. Highest DOTD unpredictability of the season.
+**DOTD History:** 2023 Norris, 2024 Verstappen (dramatic championship narrative), 2025 Verstappen (even in defeat)
+**Circuit Kings:** Hamilton (Brazil maestro, 2021 legendary charge), Verstappen (2× wins), Norris (2025)
+**DOTD Profile:** **Verstappen gets DOTD at Brazil even when losing.** In 2025, Norris won the race and championship, but Verstappen still won DOTD — the emotional underdog-losing-championship narrative drove votes overwhelmingly. Rain + dramatic overtaking creates big moments. Highest DOTD unpredictability of the calendar.
 
 ---
 
@@ -475,12 +495,13 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 **Historical Winners (2023–2025)**
 | Year | Winner | Constructor |
 |------|--------|-------------|
-| 2023 | Leclerc | Ferrari |
-| 2024 | Verstappen | Red Bull |
-| 2025 | TBD | TBD |
+| 2023 | Verstappen | Red Bull |
+| 2024 | Russell | Mercedes |
+| 2025 | Verstappen | Red Bull |
 
-**Circuit Kings:** Leclerc (2023 first race), Verstappen (2024)
-**DOTD Profile:** American audience + celebrity spectacle = entertainment vote. Leclerc and Hamilton fan bases very active in Las Vegas. Night race, high-glamour event → popularity beats positions gained. Big moves on the Strip straight earn votes.
+**DOTD History:** 2023 Leclerc (despite not winning — fan vote), 2024 Hamilton (despite not winning), 2025 Verstappen (race winner)
+**Circuit Kings:** Verstappen (2× wins), Russell (2024), Leclerc (DOTD icon here)
+**DOTD Profile:** **Classic celebrity popularity vote.** Neither Leclerc nor Hamilton won the race in their DOTD years but are beloved. Night race + glamour event = celebrity driver popularity vote overrides race result. Leclerc and Hamilton very strong here regardless of finishing position.
 
 ---
 
@@ -498,11 +519,12 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 | Year | Winner | Constructor |
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
-| 2024 | Piastri | McLaren |
-| 2025 | TBD | TBD |
+| 2024 | Verstappen | Red Bull |
+| 2025 | Verstappen | Red Bull |
 
-**Circuit Kings:** Verstappen (2023), Piastri (2024 dominant), Hamilton (Qatar history)
-**DOTD Profile:** Night race, medium global fanbase engagement. Piastri growing popularity, but Hamilton and Leclerc still dominate vote counts. DOTD often correlates with race winner here.
+**DOTD History:** 2023 Piastri, 2024 Zhou Guanyu (!), 2025 unknown
+**Circuit Kings:** **Verstappen** (3× consecutive wins — undisputed Qatar king)
+**DOTD Profile:** **Highly unpredictable DOTD.** Zhou won in 2024 despite being in a midfield car — Qatar seems to reward dramatic individual drives rather than popularity. Piastri won in 2023. Not a popularity-dominated vote. Race winner (Verstappen) consistently fails to get DOTD. Individual standout drives earn votes regardless of finishing position.
 
 ---
 
@@ -520,39 +542,40 @@ Season-level reference for all 24 circuits. Used by `/analyze-form` (circuit his
 | Year | Winner | Constructor |
 |------|--------|-------------|
 | 2023 | Verstappen | Red Bull |
-| 2024 | Verstappen | Red Bull |
-| 2025 | TBD | TBD |
+| 2024 | Norris | McLaren |
+| 2025 | Verstappen | Red Bull |
 
-**Circuit Kings:** Verstappen (4× Abu Dhabi wins), Hamilton (5× wins historically), Vettel (4× wins)
-**DOTD Profile:** Season finale — emotional vote. Drivers retiring or in final race get sympathy votes. Hamilton narratives very strong. Winner gets heavy support. Low drama on track = popularity dominates.
+**DOTD History:** 2023 Tsunoda (final race — promotion/farewell narrative), 2024 Leclerc, 2025 Verstappen
+**Circuit Kings:** Verstappen (3× recent wins), Norris (2024), Hamilton (5× wins historically)
+**DOTD Profile:** **Season finale drives emotional/sentimental voting.** Tsunoda won DOTD in 2023 for his final RB/AT race before promotion. Leclerc won in 2024 for farewell season narrative. Retirement and promotion stories dominate DOTD. Race winner (Verstappen) gets it in 2025 when no special farewell narrative applies. Low drama on track amplifies popularity and sentiment votes.
 
 ---
 
 ## Summary Reference Table
 
-| R | Circuit | Type | OT Index | SC Prob | Tire Deg | Circuit Kings (recent) |
-|---|---------|------|----------|---------|----------|----------------------|
-| 01 | Albert Park | mixed | 5 | high | medium | Piastri, Verstappen |
-| 02 | Shanghai | mixed | 6 | medium | med-high | Verstappen, Norris |
-| 03 | Suzuka | power/df | 4 | medium | medium | Verstappen |
-| 04 | Bahrain | power | 6 | low | high | Verstappen, Hamilton |
-| 05 | Jeddah | street/power | 5 | high | low | Verstappen, Norris |
-| 06 | Miami | mixed | 5 | medium | med-high | Verstappen, Norris |
-| 07 | Montreal | street/power | 6 | high | low-med | Hamilton, Verstappen |
-| 08 | Monaco | street/df | **1** | high | low | Leclerc |
-| 09 | Barcelona | downforce | 3 | low | high | Hamilton, Verstappen |
-| 10 | Red Bull Ring | power | 6 | medium | medium | Verstappen |
-| 11 | Silverstone | power | 6 | medium | medium | Hamilton, Norris |
-| 12 | Spa | power/mixed | 7 | high | medium | Verstappen, Hamilton |
-| 13 | Hungaroring | downforce | **2** | low | high | Hamilton, Norris |
-| 14 | Zandvoort | downforce | 3 | medium | medium | Verstappen |
-| 15 | Monza | **power** | **8** | low-med | low | Leclerc, Hamilton |
-| 16 | Barcelona-2 | downforce | 3 | low | high | TBC |
-| 17 | Baku | street/power | 7 | high | low-med | Leclerc, Sainz |
-| 18 | Marina Bay | street/df | **2** | high | medium | Hamilton, Norris |
-| 19 | COTA | mixed | 7 | medium | med-high | Leclerc, Hamilton |
-| 20 | Mexico City | power/alt | 5 | medium | low | Verstappen |
-| 21 | Interlagos | mixed | **8** | high | medium | Hamilton, Norris |
-| 22 | Las Vegas | street/power | 6 | medium | low | Leclerc, Verstappen |
-| 23 | Lusail | power | 7 | low | high | Verstappen, Piastri |
-| 24 | Yas Marina | power | 5 | low | low-med | Verstappen |
+| R | Circuit | Type | OT Index | SC Prob | 2023 Winner | 2024 Winner | 2025 Winner |
+|---|---------|------|----------|---------|------------|------------|------------|
+| 01 | Albert Park | mixed | 5 | high | Verstappen | Sainz | Norris |
+| 02 | Shanghai | mixed | 6 | medium | No race | Verstappen | Piastri |
+| 03 | Suzuka | power/df | 4 | medium | Verstappen | Verstappen | Verstappen |
+| 04 | Bahrain | power | 6 | low | Verstappen | Verstappen | Piastri |
+| 05 | Jeddah | street/power | 5 | high | Perez | Verstappen | Piastri |
+| 06 | Miami | mixed | 5 | medium | Verstappen | Norris | Piastri |
+| 07 | Montreal | street/power | 6 | high | Verstappen | Verstappen | Russell |
+| 08 | Monaco | street/df | **1** | high | Verstappen | Leclerc | Norris |
+| 09 | Barcelona | downforce | 3 | low | Verstappen | Verstappen | Piastri |
+| 10 | Red Bull Ring | power | 6 | medium | Verstappen | Russell | Norris |
+| 11 | Silverstone | power | 6 | medium | Verstappen | Hamilton | Norris |
+| 12 | Spa | power/mixed | 7 | high | Verstappen | Hamilton | Piastri |
+| 13 | Hungaroring | downforce | **2** | low | Verstappen | Piastri | Norris |
+| 14 | Zandvoort | downforce | 3 | medium | Verstappen | Norris | Piastri |
+| 15 | Monza | **power** | **8** | low-med | Verstappen | Leclerc | Verstappen |
+| 16 | Barcelona-2 | downforce | 3 | low | — | — | — |
+| 17 | Baku | street/power | 7 | high | Perez | Piastri | Verstappen |
+| 18 | Marina Bay | street/df | **2** | high | Sainz | Norris | Russell |
+| 19 | COTA | mixed | 7 | medium | Verstappen | Leclerc | Verstappen |
+| 20 | Mexico City | power/alt | 5 | medium | Verstappen | Sainz | Norris |
+| 21 | Interlagos | mixed | **8** | high | Verstappen | Verstappen | Norris |
+| 22 | Las Vegas | street/power | 6 | medium | Verstappen | Russell | Verstappen |
+| 23 | Lusail | power | 7 | low | Verstappen | Verstappen | Verstappen |
+| 24 | Yas Marina | power | 5 | low | Verstappen | Norris | Verstappen |
