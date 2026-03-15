@@ -27,7 +27,16 @@ For each driver/constructor, estimate expected points based on:
 
 1. **Historical form** — weighted average of last 3 rounds (most recent weighted highest: 50%/30%/20%)
 2. **Practice pace** — if practice data available for current round, adjust expectations
-3. **Circuit characteristics** — some circuits favor overtaking (more position/overtake points), some are processional
+3. **Circuit characteristics** — read `data/circuits.md` for the current circuit:
+   - `overtaking_index` ≥7: add overtake/position-gained upside for drivers starting outside top 10
+   - `overtaking_index` ≤3: reduce overtake-based upside, qualifying position is critical
+   - `sc_probability` = high: add +2 to +5 pts to midfield drivers' upside (SC creates chaos value)
+   - `tire_deg` = high: flag constructors with good tire management as having a hidden edge
+4. **DOTD probability** — estimate each driver's chance of winning DOTD (worth 10 pts). Base weights:
+   - Fan-favorite drivers (Hamilton 1.8×, Leclerc 1.6×, Norris 1.4×, Russell 1.3×, Antonelli 1.2×, Bearman 1.2×, Alonso 1.2×)
+   - Home race drivers get +50% boost to their DOTD weight
+   - Midfield hero scenario (P15+ start → top 10 finish): strong DOTD candidate regardless of popularity
+   - Read `dotd_notes` from `data/circuits.md` for circuit-specific DOTD patterns
 
 Present uncertainty: expected points should be a range (low / median / high) not a single number.
 
@@ -35,8 +44,10 @@ Present uncertainty: expected points should be a range (low / median / high) not
 
 ### Driver Value Table
 
-| Driver | Team | Price | Exp. Pts (Low/Med/High) | PPM | Price Trend | Ownership% | Signal |
-|--------|------|-------|------------------------|-----|-------------|-----------|--------|
+| Driver | Team | Price | Exp. Pts (Low/Med/High) | DOTD% | PPM | Price Trend | Ownership% | Signal |
+|--------|------|-------|------------------------|-------|-----|-------------|-----------|--------|
+
+**DOTD%** — estimated probability this driver wins Driver of the Day (worth 10 pts). Derived from `dotd_weight` (popularity), circuit DOTD profile from `data/circuits.md`, and expected race position gain.
 
 ### Constructor Value Table
 
@@ -65,6 +76,8 @@ Summarize the top insights:
 - **Budget gems:** Cheapest drivers with positive PPM trends
 - **Differential picks:** Low ownership + decent expected points (league advantage)
 - **Overtaking value:** Drivers who qualify low but race high → hidden overtake + position points
+- **DOTD upside:** Top 2-3 drivers with highest DOTD probability — note if their expected pts are close to another option (DOTD can swing the pick)
+- **SC chaos value:** If `sc_probability` = high, flag midfield drivers starting P12–P18 with high overtake potential as lottery tickets — SC restart can unlock 8–15 bonus pts
 
 ## Notes
 

@@ -63,6 +63,30 @@ Present as a table showing movement:
 | Team | Testing | R01 | Current | Movement |
 |------|---------|-----|---------|----------|
 
+## Circuit Fit Analysis
+
+After the main form tables, add a circuit fit section for the upcoming race.
+
+**Step:** Look up the upcoming circuit in `data/circuits.md` and cross-reference each driver/constructor's form against historical circuit results.
+
+### Circuit Fit Table
+
+| Driver/Constructor | Circuit King? | Recent Circuit Results | Fit Signal |
+|--------------------|--------------|------------------------|------------|
+| (e.g. Leclerc) | Yes — Monaco 2× wins | 1st 2024, 1st 2025 | ✅ Strong |
+| (e.g. Verstappen) | Yes — Suzuka 3× wins | 1st 2023, 1st 2024 | ✅ Strong |
+
+**Fit Signals:**
+- ✅ Strong — circuit king (2+ wins or podiums at this track)
+- ➡️ Neutral — no strong historical data either way
+- ⚠️ Weak — historically poor at this track or track type doesn't suit team
+
+**Notes for circuit fit:**
+- Check `type` field — power circuits favor high-straight-speed teams (Mercedes, Red Bull historically); downforce circuits favor aerodynamically efficient cars
+- Check `overtaking_index` — low index (≤3) means qualifying position is critical; high index (≥7) means race pace + overtake factor matter more
+- Check `circuit_kings` field for driver-specific historical advantages
+- Note `sc_probability` — high SC circuits increase variance and favor midfield starters with high overtake potential
+
 ## Notes
 
 - If fewer than 3 rounds of data exist, use what's available and note the limited sample

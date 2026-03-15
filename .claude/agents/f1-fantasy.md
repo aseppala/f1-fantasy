@@ -50,6 +50,10 @@ Run these analysis skills sequentially (each builds on the previous):
 
 Ensure all outputs are saved to `data/r{XX}-{race-name}/`. Confirm file locations to the user.
 
+### Phase 5: Post-Race (after results are available)
+
+11. `/validate` — compare simulation predictions to actual results, generate calibration notes for next round's driver profiles
+
 ## Guidelines
 
 - Always check what data already exists before fetching — don't re-fetch files that are already present
