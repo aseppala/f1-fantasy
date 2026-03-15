@@ -326,11 +326,11 @@ def get_australia_profiles() -> tuple[list[DriverProfile], list[ConstructorProfi
         # S Tier: top teams, consistent front-runners
         DriverProfile("Leclerc", "Ferrari", 22.8, quali_mean=3, race_mean=3, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.6),
         DriverProfile("Piastri", "McLaren", 25.5, quali_mean=3, race_mean=3.5, variance=2.5, dnf_chance=0.05, overtake_factor=1.1, dotd_weight=1.5),  # home race hero
-        DriverProfile("Russell", "Mercedes", 27.4, quali_mean=3.5, race_mean=3, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.3),
-        DriverProfile("Norris", "McLaren", 27.2, quali_mean=3.5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.4),
+        DriverProfile("Russell", "Mercedes", 27.4, quali_mean=3.5, race_mean=3, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.0),
+        DriverProfile("Norris", "McLaren", 27.2, quali_mean=3.5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=2.0),
 
         # A Tier: fast but slightly less consistent or lower pace
-        DriverProfile("Hamilton", "Ferrari", 22.5, quali_mean=5, race_mean=4.5, variance=3.0, dnf_chance=0.05, overtake_factor=1.1, dotd_weight=1.8),
+        DriverProfile("Hamilton", "Ferrari", 22.5, quali_mean=5, race_mean=4.5, variance=3.0, dnf_chance=0.05, overtake_factor=1.1, dotd_weight=1.5),
         DriverProfile("Antonelli", "Mercedes", 23.2, quali_mean=4.5, race_mean=4.5, variance=3.0, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.2),
         DriverProfile("Verstappen", "Red Bull", 27.7, quali_mean=4, race_mean=5.5, variance=3.0, dnf_chance=0.05, overtake_factor=1.2, dotd_weight=1.0),
 
@@ -407,12 +407,12 @@ def get_china_profiles() -> tuple[list[DriverProfile], list[ConstructorProfile]]
     # Shanghai overtaking index: 6 (above neutral, good DRS zones)
     drivers = [
         # S Tier: Mercedes dominant (1-2 in R01, 1-2 FP1, 1-2 SQ)
-        DriverProfile("Russell", "Mercedes", 27.7, quali_mean=1.5, race_mean=1.5, variance=1.5, dnf_chance=0.04, overtake_factor=1.0, dotd_weight=1.3),
+        DriverProfile("Russell", "Mercedes", 27.7, quali_mean=1.5, race_mean=1.5, variance=1.5, dnf_chance=0.04, overtake_factor=1.0, dotd_weight=1.0),
         DriverProfile("Antonelli", "Mercedes", 23.5, quali_mean=2.5, race_mean=2.5, variance=2.0, dnf_chance=0.06, overtake_factor=1.0, dotd_weight=1.2),
 
         # A Tier: McLaren + Ferrari fighting for P3-P6
-        DriverProfile("Norris", "McLaren", 27.2, quali_mean=3.5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.4),
-        DriverProfile("Hamilton", "Ferrari", 22.6, quali_mean=4.5, race_mean=4.5, variance=2.5, dnf_chance=0.05, overtake_factor=1.1, dotd_weight=1.8),
+        DriverProfile("Norris", "McLaren", 27.2, quali_mean=3.5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=2.0),
+        DriverProfile("Hamilton", "Ferrari", 22.6, quali_mean=4.5, race_mean=4.5, variance=2.5, dnf_chance=0.05, overtake_factor=1.1, dotd_weight=1.5),
         DriverProfile("Piastri", "McLaren", 25.2, quali_mean=5, race_mean=4, variance=2.5, dnf_chance=0.05, overtake_factor=1.1, dotd_weight=1.1),
         DriverProfile("Leclerc", "Ferrari", 23.1, quali_mean=5.5, race_mean=5, variance=2.5, dnf_chance=0.05, overtake_factor=1.0, dotd_weight=1.6),
 
