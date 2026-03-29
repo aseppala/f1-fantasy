@@ -81,6 +81,7 @@
 
 Every race, you choose one driver as your **2x driver** — their points are doubled. This is NOT a chip; it's a permanent feature available every race weekend. Picking the right 2x driver is one of the most important decisions each round.
 
+
 ## Power Chips (6 Total)
 
 Only one chip per race weekend. Each can only be used once per season. Once activated, a chip cannot be cancelled. 3 available from Round 1, 3 unlock after Round 1.

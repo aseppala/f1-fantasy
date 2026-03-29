@@ -1,0 +1,150 @@
+{
+  "race": "australia",
+  "sprint": false,
+  "overtaking_index": 5,
+  "drivers": [
+    {
+      "name": "Russell",    "team": "Mercedes",     "price": 27.4,
+      "quali_mean": 3.5, "race_mean": 3.0, "variance": 2.5,
+      "dnf_chance": 0.05, "overtake_factor": 1.0, "dotd_weight": 1.0
+    },
+    {
+      "name": "Antonelli",  "team": "Mercedes",     "price": 23.2,
+      "quali_mean": 4.5, "race_mean": 4.5, "variance": 3.0,
+      "dnf_chance": 0.05, "overtake_factor": 1.0, "dotd_weight": 1.2
+    },
+    {
+      "name": "Leclerc",    "team": "Ferrari",      "price": 22.8,
+      "quali_mean": 3.0, "race_mean": 3.0, "variance": 2.5,
+      "dnf_chance": 0.05, "overtake_factor": 1.0, "dotd_weight": 1.6
+    },
+    {
+      "name": "Piastri",    "team": "McLaren",      "price": 25.5,
+      "quali_mean": 3.0, "race_mean": 3.5, "variance": 2.5,
+      "dnf_chance": 0.05, "overtake_factor": 1.1, "dotd_weight": 1.5
+    },
+    {
+      "name": "Norris",     "team": "McLaren",      "price": 27.2,
+      "quali_mean": 3.5, "race_mean": 4.0, "variance": 2.5,
+      "dnf_chance": 0.05, "overtake_factor": 1.0, "dotd_weight": 2.0
+    },
+    {
+      "name": "Hamilton",   "team": "Ferrari",      "price": 22.5,
+      "quali_mean": 5.0, "race_mean": 4.5, "variance": 3.0,
+      "dnf_chance": 0.05, "overtake_factor": 1.1, "dotd_weight": 1.5
+    },
+    {
+      "name": "Verstappen", "team": "Red Bull",     "price": 27.7,
+      "quali_mean": 4.0, "race_mean": 5.5, "variance": 3.0,
+      "dnf_chance": 0.05, "overtake_factor": 1.2, "dotd_weight": 1.0
+    },
+    {
+      "name": "Hadjar",     "team": "Red Bull",     "price": 15.1,
+      "quali_mean": 8.0, "race_mean": 8.0, "variance": 3.0,
+      "dnf_chance": 0.07, "overtake_factor": 1.0, "dotd_weight": 1.0
+    },
+    {
+      "name": "Bearman",    "team": "Haas",         "price": 7.4,
+      "quali_mean": 12.0, "race_mean": 11.0, "variance": 3.5,
+      "dnf_chance": 0.08, "overtake_factor": 1.3, "dotd_weight": 1.2
+    },
+    {
+      "name": "Ocon",       "team": "Haas",         "price": 7.3,
+      "quali_mean": 11.0, "race_mean": 12.0, "variance": 3.5,
+      "dnf_chance": 0.08, "overtake_factor": 1.1, "dotd_weight": 1.0
+    },
+    {
+      "name": "Lindblad",   "team": "Racing Bulls", "price": 6.2,
+      "quali_mean": 13.0, "race_mean": 13.0, "variance": 3.5,
+      "dnf_chance": 0.08, "overtake_factor": 1.0, "dotd_weight": 1.0
+    },
+    {
+      "name": "Lawson",     "team": "Racing Bulls", "price": 6.5,
+      "quali_mean": 14.0, "race_mean": 14.0, "variance": 3.5,
+      "dnf_chance": 0.08, "overtake_factor": 1.0, "dotd_weight": 1.0
+    },
+    {
+      "name": "Gasly",      "team": "Alpine",       "price": 12.0,
+      "quali_mean": 14.0, "race_mean": 14.0, "variance": 3.5,
+      "dnf_chance": 0.08, "overtake_factor": 1.0, "dotd_weight": 1.0
+    },
+    {
+      "name": "Hulkenberg", "team": "Audi",         "price": 6.8,
+      "quali_mean": 13.0, "race_mean": 13.0, "variance": 3.5,
+      "dnf_chance": 0.08, "overtake_factor": 0.9, "dotd_weight": 1.0
+    },
+    {
+      "name": "Sainz",      "team": "Williams",     "price": 11.8,
+      "quali_mean": 13.0, "race_mean": 12.0, "variance": 3.5,
+      "dnf_chance": 0.08, "overtake_factor": 1.0, "dotd_weight": 1.1
+    },
+    {
+      "name": "Albon",      "team": "Williams",     "price": 11.6,
+      "quali_mean": 15.0, "race_mean": 15.0, "variance": 3.5,
+      "dnf_chance": 0.08, "overtake_factor": 1.0, "dotd_weight": 1.0
+    },
+    {
+      "name": "Colapinto",  "team": "Alpine",       "price": 6.2,
+      "quali_mean": 16.0, "race_mean": 16.0, "variance": 3.5,
+      "dnf_chance": 0.08, "overtake_factor": 0.9, "dotd_weight": 1.0
+    },
+    {
+      "name": "Bortoleto",  "team": "Audi",         "price": 6.4,
+      "quali_mean": 15.0, "race_mean": 15.0, "variance": 3.5,
+      "dnf_chance": 0.08, "overtake_factor": 0.9, "dotd_weight": 1.0
+    },
+    {
+      "name": "Alonso",     "team": "Aston Martin", "price": 10.0,
+      "quali_mean": 18.0, "race_mean": 18.0, "variance": 3.0,
+      "dnf_chance": 0.12, "overtake_factor": 1.0, "dotd_weight": 1.2
+    },
+    {
+      "name": "Stroll",     "team": "Aston Martin", "price": 8.0,
+      "quali_mean": 19.0, "race_mean": 19.0, "variance": 3.0,
+      "dnf_chance": 0.12, "overtake_factor": 0.8, "dotd_weight": 0.8
+    },
+    {
+      "name": "Bottas",     "team": "Cadillac",     "price": 5.9,
+      "quali_mean": 20.0, "race_mean": 20.0, "variance": 3.0,
+      "dnf_chance": 0.12, "overtake_factor": 0.8, "dotd_weight": 0.9
+    },
+    {
+      "name": "Perez",      "team": "Cadillac",     "price": 6.0,
+      "quali_mean": 21.0, "race_mean": 21.0, "variance": 3.0,
+      "dnf_chance": 0.12, "overtake_factor": 0.8, "dotd_weight": 0.9
+    }
+  ],
+  "constructors": [
+    {"name": "McLaren",      "price": 28.9, "pit_mean": 2.3},
+    {"name": "Mercedes",     "price": 29.3, "pit_mean": 2.3},
+    {"name": "Red Bull",     "price": 28.2, "pit_mean": 2.2},
+    {"name": "Ferrari",      "price": 23.3, "pit_mean": 2.3},
+    {"name": "Williams",     "price": 12.0, "pit_mean": 2.5},
+    {"name": "Aston Martin", "price": 10.3, "pit_mean": 2.6},
+    {"name": "Alpine",       "price": 12.5, "pit_mean": 2.5},
+    {"name": "Haas",         "price":  7.4, "pit_mean": 2.5},
+    {"name": "Racing Bulls", "price":  6.3, "pit_mean": 2.4},
+    {"name": "Audi",         "price":  6.6, "pit_mean": 2.6},
+    {"name": "Cadillac",     "price":  6.0, "pit_mean": 2.8}
+  ],
+  "teams": [
+    {
+      "name": "T1 Safe (Leclerc 2x)",
+      "drivers": ["Leclerc", "Antonelli", "Bearman", "Lindblad", "Bottas"],
+      "constructors": ["Ferrari", "Haas"],
+      "captain": "Leclerc"
+    },
+    {
+      "name": "T2 Constructor Kings (Hadjar 2x)",
+      "drivers": ["Hadjar", "Bearman", "Ocon", "Lindblad", "Bottas"],
+      "constructors": ["McLaren", "Ferrari"],
+      "captain": "Hadjar"
+    },
+    {
+      "name": "T3 Ferrari Nuclear (Leclerc 2x)",
+      "drivers": ["Leclerc", "Hamilton", "Bearman", "Lindblad", "Bottas"],
+      "constructors": ["Ferrari", "Racing Bulls"],
+      "captain": "Leclerc"
+    }
+  ]
+}
