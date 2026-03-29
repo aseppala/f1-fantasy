@@ -43,8 +43,9 @@
 | DNF/DSQ | -20 |
 
 ### Bonus Points (Drivers)
-- **Positions gained:** +1 pt each
-- **Overtakes:** +1 pt each
+- **Positions gained:** +1 pt each (qualifying position vs race finish)
+- **Positions lost:** −1 pt each (confirmed from API data — positions lost DO subtract)
+- **Overtakes:** +1 pt each (tracked independently of net position change — a driver can gain overtake pts even with zero or negative net positions)
 - **Fastest lap:** +10 pts
 - **Driver of the Day:** +10 pts
 
