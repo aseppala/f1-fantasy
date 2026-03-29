@@ -166,7 +166,8 @@ def _pit_stop_bonus(pit_time: float) -> float:
     return 0
 
 
-def score_constructor(con: ConstructorProfile, driver_results: dict[str, DriverResult]) -> float:
+def score_constructor(con: ConstructorProfile, driver_results: dict[str, DriverResult],
+                      pit_time: float | None = None, is_fastest_pit: bool = False) -> float:
     d1, d2 = con.drivers
     r1 = driver_results[d1]
     r2 = driver_results[d2]
@@ -186,9 +187,12 @@ def score_constructor(con: ConstructorProfile, driver_results: dict[str, DriverR
             driver_pts -= DOTD_BONUS
         pts += driver_pts
 
-    # Pit stop bonus
-    pit_time = random.gauss(con.pit_mean, 0.3)
+    # Pit stop bonus (time-tier) + fastest pit bonus if applicable
+    if pit_time is None:
+        pit_time = random.gauss(con.pit_mean, 0.3)
     pts += _pit_stop_bonus(pit_time)
+    if is_fastest_pit:
+        pts += FASTEST_PIT_BONUS
 
     return pts
 
@@ -242,7 +246,7 @@ def simulate_sprint_race(drivers: list[DriverProfile],
     for pos_idx, (_, d) in enumerate(sprint_race_scores):
         driver_results[d.name].sprint_race_pos = pos_idx + 1
 
-    # Positions delta and overtakes
+    # Positions delta and overtakes (same independent model as main race)
     overtake_scale = circuit_overtaking_index / 5.0
     driver_map = {d.name: d for d in drivers}
     for name, r in driver_results.items():
@@ -250,10 +254,11 @@ def simulate_sprint_race(drivers: list[DriverProfile],
             continue
         delta = r.sprint_start_pos - r.sprint_race_pos
         r.sprint_positions_delta = delta
-        if delta > 0:
-            ot = max(0, round(random.gauss(
-                delta * driver_map[name].overtake_factor * overtake_scale, 1.5)))
-            r.sprint_overtakes = ot
+        midfield_activity = max(0.0, 1.0 - abs(r.sprint_start_pos - 11) / 10.0)
+        base = midfield_activity * circuit_overtaking_index * 0.35 * driver_map[name].overtake_factor
+        gained = max(0, delta) * driver_map[name].overtake_factor * overtake_scale
+        ot = max(0, round(random.gauss(base + gained, 1.5)))
+        r.sprint_overtakes = ot
 
     # Fastest lap: all finishers eligible (not just top 10)
     finishers = [r for r in driver_results.values() if not r.sprint_dnf]
@@ -299,16 +304,22 @@ def simulate_weekend(drivers: list[DriverProfile], constructors: list[Constructo
         driver_results[d.name].race_pos = pos_idx + 1
 
     # --- Positions delta and overtakes ---
+    # Overtakes are tracked independently of net position change — a driver can
+    # pass 8 cars and be passed back 8 times, scoring 8 overtake pts at 0 net delta.
+    # Confirmed from R03 Japan API: Hamilton P6→P6 (delta=0) scored +6 overtake pts.
     overtake_scale = circuit_overtaking_index / 5.0
     for name, r in driver_results.items():
         if r.dnf:
             continue
         delta = r.quali_pos - r.race_pos
         r.positions_delta = delta
-        if delta > 0:
-            ot = max(0, round(random.gauss(
-                delta * driver_map[name].overtake_factor * overtake_scale, 1.5)))
-            r.overtakes = ot
+        # Base overtake activity: all drivers have some based on circuit and position.
+        # Midfield drivers (P8-P15) have the most passing opportunities.
+        midfield_activity = max(0.0, 1.0 - abs(r.quali_pos - 11) / 10.0)
+        base = midfield_activity * circuit_overtaking_index * 0.35 * driver_map[name].overtake_factor
+        gained = max(0, delta) * driver_map[name].overtake_factor * overtake_scale
+        ot = max(0, round(random.gauss(base + gained, 1.5)))
+        r.overtakes = ot
 
     # --- Fastest lap: weighted random among top-10 finishers ---
     top10 = [r for r in driver_results.values() if not r.dnf and r.race_pos <= 10]
@@ -342,9 +353,14 @@ def simulate_weekend(drivers: list[DriverProfile], constructors: list[Constructo
         driver_points[name] = pts
 
     # --- Score constructors (uses r.points set above) ---
+    # Simulate all pit times first so we can award the fastest-pit bonus.
+    con_pit_times = {con.name: random.gauss(con.pit_mean, 0.3) for con in constructors}
+    fastest_pit_con = min(con_pit_times, key=con_pit_times.get)
+
     constructor_points = {}
     for con in constructors:
-        pts = score_constructor(con, driver_results)
+        pts = score_constructor(con, driver_results, pit_time=con_pit_times[con.name],
+                                is_fastest_pit=(con.name == fastest_pit_con))
         if sprint:
             pts += score_constructor_sprint(con, driver_results)
         constructor_points[con.name] = pts

@@ -59,7 +59,7 @@
 ### Constructor Qualifying
 - Both drivers reach Q3: +10 pts
 - Both drivers reach Q2: +5 pts
-- One driver reaches Q3: +3 pts
+- One driver reaches Q3: +5 pts
 - One driver reaches Q2: +1 pt
 - Both eliminated in Q1: -1 pt
 - Driver DSQ: -5 pts per driver
@@ -74,7 +74,7 @@
 | 2.5 - 2.99s | +2 |
 | 2.2 - 2.49s | +5 |
 | 2.0 - 2.19s | +10 |
-| < 2.0s | +10 |
+| < 2.0s | +20 |
 | Fastest pit stop of race | +5 extra |
 | Record-breaking (< 1.8s) | +15 |
 
