@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  f1-fantasy-agent:
+    desc: Launch Claude Code in F1 Fantasy agent mode
+    cmds:
+      - claude --agent f1-fantasy
